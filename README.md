@@ -20,7 +20,7 @@ A ready-to-use, SEO and accessibility-focused Astro starter template. Built with
 - Tailwind CSS 4.1+ support
 - TypeScript integration with path aliases for easier imports and content collections support
 - Prettier integration with `prettier-plugin-astro` and `prettier-plugin-tailwind`
-- ESLint integration with strict accessibility settings for `eslint-plugin-jsx-a11y`
+- Oxlint integration with strict accessibility settings
 - Markdown and MDX support with comprehensive examples and components
 - Modern OKLCH color system with automatic palette generation from primary/secondary colors
 - Atkinson Hyperlegible font for improved readability and accessibility
