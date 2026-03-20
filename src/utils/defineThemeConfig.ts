@@ -55,10 +55,10 @@ export type ThemeConfig = {
 
 const defaultConfig: Omit<ThemeConfig, 'name' | 'id'> = {
   seo: {
-    title: 'My Astro Site',
-    subtitle: '',
-    description: 'A website built with Accessible Astro Starter',
-    author: '',
+    title: 'Ziva Wernick',
+    subtitle: 'Social Impact Software Developer',
+    description: 'A Portfolio website built with Accessible Astro Starter',
+    author: 'Ziva Wernick',
     image: null,
   },
   colors: {

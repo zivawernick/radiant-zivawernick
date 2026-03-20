@@ -10,11 +10,12 @@ This document tracks the steps taken to transform the Accessible Astro Starter t
 - [x] Update `repository`, `bugs`, and `homepage` URLs to personal GitHub/domain.
 
 ## 2. Site Configuration (`theme.config.ts`) - 🔄 NEXT
+
 - [X] Update `name` to "Ziva Wernick".
 - [X] Update `seo.title` and `seo.description`.
 - [X] Replace default `socials` with personal links (GitHub, LinkedIn, etc.).
 - [ ] Prune `navigation` items to remove template-specific demo pages.
-- [ ] Update `colors` (primary, secondary, neutral, outline) with brand hex codes.
+- [X] Update `colors` (primary, secondary, neutral, outline) with brand hex codes.
 
 ## 3. Visual Assets
 - [X] Replace `src/assets/img/logo.svg` with personal logo.

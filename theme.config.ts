@@ -4,7 +4,7 @@ import logoImage from '@assets/img/logo.svg'
 
 export default defineThemeConfig({
   name: 'Ziva Wernick',
-  id: 'accessible-astro-starter',
+  id: 'zw-accessible-astro-starter',
   logo: logoImage,
   seo: {
     title: 'Ziva Wernick - Social Impact Software Developer',
@@ -83,7 +83,7 @@ export default defineThemeConfig({
       {
         type: 'link',
         label: 'Go to our GitHub page, opens in new tab',
-        href: 'https://github.com/incluud/accessible-astro-starter',
+        href: 'https://github.com/zivawernick/radiant-zivawernick-astro',
         icon: 'lucide:github',
         external: true,
         excludeFromLauncher: true,
