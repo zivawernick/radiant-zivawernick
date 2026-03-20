@@ -7,7 +7,7 @@ export default defineThemeConfig({
   id: 'zw-accessible-astro-starter',
   logo: logoImage,
   seo: {
-    title: 'Ziva Wernick - Social Impact Software Developer',
+    title: 'Ziva Wernick - Software Developer',
     description:
       'Software Developer Building Tech for Social Impact with a Website built with Accessibility for Astro including several accessibility features and tools to help you build faster.',
     author: 'Ziva Wernick',
@@ -29,6 +29,11 @@ export default defineThemeConfig({
       },
       {
         type: 'link',
+        label: 'Services',
+        href: '/#services',
+      },
+      {
+        type: 'link',
         label: 'About Me',
         href: '/#about',
       },
@@ -36,11 +41,6 @@ export default defineThemeConfig({
         type: 'link',
         label: 'Technical Stack',
         href: '/#tech-stack',
-      },
-      {
-        type: 'link',
-        label: 'Services',
-        href: '/#services',
       },
       {
         type: 'link',
@@ -54,9 +54,17 @@ export default defineThemeConfig({
       },
       {
         type: 'link',
-        label: 'Go to our GitHub page, opens in new tab',
-        href: 'https://github.com/zivawernick/radiant-zivawernick-astro',
+        label: 'Go to my GitHub page, opens in new tab',
+        href: 'https://github.com/zivawernick',
         icon: 'lucide:github',
+        external: true,
+        excludeFromLauncher: true,
+      },
+      {
+        type: 'link',
+        label: 'Go to my LinkedIn page, opens in new tab',
+        href: 'https://www.linkedin.com/in/zivawernick/',
+        icon: 'lucide:linkedin',
         external: true,
         excludeFromLauncher: true,
       },

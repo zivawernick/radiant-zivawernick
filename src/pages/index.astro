@@ -11,12 +11,56 @@ import { Icon } from 'astro-icon/components'
 ---
 
 <DefaultLayout title="Ziva Wernick - Social Impact Software Developer" useTitleTemplate={false}>
+  <Hero />
+
   <div id="about">
-    <Hero />
+    <ContentMedia imgSrc="/profile2.jpg">
+      <Heading level="h2">About Ziva Wernick</Heading>
+      {/* 
+      <p class="text-2xl">
+        This theme provides plenty of tried and tested Accessible Astro Components. Some are native to this theme and a
+        lot of others are integrated using a <Link
+          isExternal
+          href="https://github.com/incluud/accessible-astro-components">separate package</Link
+        >. They'll get you up and running in building an accessible solution for your visitors.
+      </p>
+      */}
+    </ContentMedia>
+    <ContentMedia imgSrc="/wcag-compliant.webp" reverseImg={true}>
+      <Heading level="h2">WCAG 2.2 AA compliant</Heading>
+      {/* 
+      <p class="text-2xl">
+        Using semantic HTML, landmarks, skip links, screen reader friendly content, aria-labels, keyboard accessible
+        navigation and components, clear outlines and tab indicators and the right color contrast, you're more certain of
+        reaching WCAG AA compliance.
+      </p>
+      */}
+    </ContentMedia>
   </div>
+
   <section id="tech-stack" class="my-64">
+    <div class="space-content container">
+      <Heading level="h2">Technical Stack</Heading>
+      <p class="text-2xl">
+        A comprehensive list of the technologies and tools I use to build accessible, high-performance web applications.
+      </p>
+      <AvatarGroup display="grid" gridItemsSize="300px" gridGap="2rem">
+        <Avatar initials="TS" title="TypeScript" subtitle="Language" />
+        <Avatar initials="RT" title="React" subtitle="Frontend" />
+        <Avatar initials="AS" title="Astro" subtitle="Framework" />
+        <Avatar initials="TW" title="Tailwind CSS" subtitle="Styling" />
+        <Avatar initials="ND" title="Node.js" subtitle="Backend" />
+        <Avatar initials="GH" title="GitHub" subtitle="Source Control" />
+        <Avatar initials="AC" title="Accessibility" subtitle="WCAG 2.2" />
+        <Avatar initials="PX" title="Playwright" subtitle="Testing" />
+        <Avatar initials="VI" title="Vite" subtitle="Build Tool" />
+      </AvatarGroup>
+    </div>
+  </section>
+
+  <section id="services" class="my-64">
     <div class="container">
-      <Heading level="h2" class="mb-8">Technical Stack</Heading>
+      <Heading level="h2" class="mb-8">Reach New Heights - My Services</Heading>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
         <Feature icon="lucide:accessibility" title="Accessible by default">
           Keyboard navigation, focus indicators, ARIA labels, semantic HTML, and more. This theme is designed to be
@@ -36,7 +80,7 @@ import { Icon } from 'astro-icon/components'
           Less worry about formatting your code, let the Astro Prettier integration do the heavy lifting.
         </Feature>
         <Feature icon="lucide:code" title="Oxlint">
-          Fast linting with accessibility-focused rules to ensure you stay on track with the WCAG standards.
+          Fast linter with accessibility-focused rules to ensure you stay on track with the WCAG standards.
         </Feature>
         <Feature icon="lucide:bookmark" title="Blog & portfolio">
           This theme comes with a fully integrated blog and portfolio, dynamic pages and SEO optimization.
@@ -50,30 +94,13 @@ import { Icon } from 'astro-icon/components'
       </div>
     </div>
   </section>
-  <div id="services">
-    <ContentMedia imgSrc="/accessible-components.webp">
-      <Heading level="h2">Reach New Heights</Heading>
-      <p class="text-2xl">
-        This theme provides plenty of tried and tested Accessible Astro Components. Some are native to this theme and a
-        lot of others are integrated using a <Link
-          isExternal
-          href="https://github.com/incluud/accessible-astro-components">separate package</Link
-        >. They'll get you up and running in building an accessible solution for your visitors.
-      </p>
-    </ContentMedia>
-  </div>
-  <ContentMedia imgSrc="/wcag-compliant.webp" reverseImg={true}>
-    <Heading level="h2">WCAG 2.2 AA compliant</Heading>
-    <p class="text-2xl">
-      Using semantic HTML, landmarks, skip links, screen reader friendly content, aria-labels, keyboard accessible
-      navigation and components, clear outlines and tab indicators and the right color contrast, you're more certain of
-      reaching WCAG AA compliance.
-    </p>
-  </ContentMedia>
+
   <div id="projects">
     <FeaturedProjects />
   </div>
+
   <FeaturedPosts />
+
   <section class="my-64">
     <div class="container grid grid-cols-1 gap-12 md:grid-cols-2">
       <div class="flex flex-col items-start gap-4">
@@ -82,7 +109,7 @@ import { Icon } from 'astro-icon/components'
           This section demonstrates how to effectively use the Accordion component to organize and display frequently
           asked questions in an accessible and user-friendly way.
         </p>
-        <Link href="/faq" isButton type="primary" animateOnHover animationType="boop">
+        <Link href="/contact" isButton type="primary" animateOnHover animationType="boop">
           <Icon aria-hidden="true" name="lucide:headset" size=" 1.5rem" />
           Contact support team
         </Link>
@@ -135,26 +162,7 @@ import { Icon } from 'astro-icon/components'
       </div>
     </div>
   </section>
-  <section class="my-64">
-    <div class="space-content container">
-      <Heading level="h2">Our community</Heading>
-      <p class="text-2xl">
-        We're a community of developers who are passionate about making the web more accessible. We're always looking
-        for new ways to improve the accessibility of the web.
-      </p>
-      <AvatarGroup display="grid" gridItemsSize="300px" gridGap="2rem">
-        <Avatar initials="RJ" title="Robert Johnson" subtitle="Manager" />
-        <Avatar initials="MT" title="Maria Torres" subtitle="Developer" />
-        <Avatar initials="AK" title="Alex Kim" subtitle="Designer" />
-        <Avatar initials="SL" title="Sarah Lee" subtitle="Content Strategist" />
-        <Avatar initials="JP" title="James Peterson" subtitle="QA Engineer" />
-        <Avatar initials="LW" title="Lisa Wong" subtitle="Product Owner" />
-        <Avatar initials="DM" title="David Martinez" subtitle="UX Researcher" />
-        <Avatar initials="EB" title="Emma Brown" subtitle="Accessibility Specialist" />
-        <Avatar initials="TC" title="Thomas Chen" subtitle="Frontend Developer" />
-      </AvatarGroup>
-    </div>
-  </section>
+
   <section class="mt-64 mb-32">
     <div class="container">
       <Heading level="h2" class="mb-16">Impact in numbers</Heading>
