@@ -1,11 +1,11 @@
 {
-  "name": "accessible-astro-starter",
-  "description": "Software Developer Building Tech for Social Impact. Website built with Accessible Starter Theme for Astro including several accessibility features and tools to help you build faster.",
-  "version": "5.0.2",
-  "author": "ziva-wernick",
+  "name": "ziva-wernick-portfolio",
+  "description": "Personal website and portfolio of Ziva Wernick, built with accessibility and performance in mind.",
+  "version": "0.1.0",
+  "author": "Ziva Wernick",
   "license": "MIT",
   "type": "module",
-  "homepage": "https://accessible-astro-starter.incluud.dev/",
+  "homepage": "https://github.com/zivawernick/radiant-zivawernick",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -15,24 +15,19 @@
   },
   "keywords": [
     "astro",
-    "astro-component",
-    "astro-components",
     "accessible",
     "accessibility",
     "a11y",
     "wcag",
-    "responsive",
-    "ui-library",
-    "ui-components",
-    "blog",
-    "portfolio"
+    "portfolio",
+    "personal-website"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/incluud/accessible-astro-starter.git"
+    "url": "git+https://github.com/zivawernick/radiant-zivawernick.git"
   },
   "bugs": {
-    "url": "https://github.com/incluud/accessible-astro-starter/issues"
+    "url": "https://github.com/zivawernick/radiant-zivawernick/issues"
   },
   "devDependencies": {
     "@astrojs/mdx": "^4.3.13",
