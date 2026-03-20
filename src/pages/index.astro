@@ -10,11 +10,13 @@ import { Accordion, AccordionItem, Avatar, AvatarGroup, Heading, Link } from 'ac
 import { Icon } from 'astro-icon/components'
 ---
 
-<DefaultLayout title="Accessible Astro Starter - Build Faster, More Inclusive Websites" useTitleTemplate={false}>
-  <Hero />
-  <section class="my-64">
+<DefaultLayout title="Ziva Wernick - Social Impact Software Developer" useTitleTemplate={false}>
+  <div id="about">
+    <Hero />
+  </div>
+  <section id="tech-stack" class="my-64">
     <div class="container">
-      <Heading level="h2" class="mb-8">Features</Heading>
+      <Heading level="h2" class="mb-8">Technical Stack</Heading>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
         <Feature icon="lucide:accessibility" title="Accessible by default">
           Keyboard navigation, focus indicators, ARIA labels, semantic HTML, and more. This theme is designed to be
@@ -48,16 +50,18 @@ import { Icon } from 'astro-icon/components'
       </div>
     </div>
   </section>
-  <ContentMedia imgSrc="/accessible-components.webp">
-    <Heading level="h2">Accessible components</Heading>
-    <p class="text-2xl">
-      This theme provides plenty of tried and tested Accessible Astro Components. Some are native to this theme and a
-      lot of others are integrated using a <Link
-        isExternal
-        href="https://github.com/incluud/accessible-astro-components">separate package</Link
-      >. They'll get you up and running in building an accessible solution for your visitors.
-    </p>
-  </ContentMedia>
+  <div id="services">
+    <ContentMedia imgSrc="/accessible-components.webp">
+      <Heading level="h2">Reach New Heights</Heading>
+      <p class="text-2xl">
+        This theme provides plenty of tried and tested Accessible Astro Components. Some are native to this theme and a
+        lot of others are integrated using a <Link
+          isExternal
+          href="https://github.com/incluud/accessible-astro-components">separate package</Link
+        >. They'll get you up and running in building an accessible solution for your visitors.
+      </p>
+    </ContentMedia>
+  </div>
   <ContentMedia imgSrc="/wcag-compliant.webp" reverseImg={true}>
     <Heading level="h2">WCAG 2.2 AA compliant</Heading>
     <p class="text-2xl">
@@ -66,7 +70,9 @@ import { Icon } from 'astro-icon/components'
       reaching WCAG AA compliance.
     </p>
   </ContentMedia>
-  <FeaturedProjects />
+  <div id="projects">
+    <FeaturedProjects />
+  </div>
   <FeaturedPosts />
   <section class="my-64">
     <div class="container grid grid-cols-1 gap-12 md:grid-cols-2">
