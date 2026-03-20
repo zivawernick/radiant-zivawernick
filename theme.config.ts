@@ -3,14 +3,14 @@ import previewImage from '@assets/img/social-preview-image.png'
 import logoImage from '@assets/img/logo.svg'
 
 export default defineThemeConfig({
-  name: 'Accessible Astro',
+  name: 'Ziva Wernick',
   id: 'accessible-astro-starter',
   logo: logoImage,
   seo: {
-    title: 'Accessible Astro Starter',
+    title: 'Ziva Wernick - Social Impact Software Developer',
     description:
-      'An Accessible Starter Theme for Astro including several accessibility features and tools to help you build faster.',
-    author: 'Incluud',
+      'Software Developer Building Tech for Social Impact with a Website built with Accessibility for Astro including several accessibility features and tools to help you build faster.',
+    author: 'Ziva Wernick',
     image: previewImage, // Can also be a string e.g. '/social-preview-image.png',
   },
   colors: {
@@ -93,18 +93,18 @@ export default defineThemeConfig({
   socials: [
     {
       label: 'GitHub',
-      href: 'https://github.com/incluud/',
+      href: 'https://github.com/zivawernick/',
       icon: 'lucide:github',
     },
     {
-      label: 'Bluesky',
-      href: 'https://bsky.app/profile/incluud.dev',
-      icon: 'lucide:bot-message-square',
+      label: 'Linkedin',
+      href: 'https://www.linkedin.com/in/zivawernick/',
+      icon: 'lucide:linkedin',
     },
     {
-      label: 'Open Collective',
-      href: 'https://opencollective.com/incluud',
-      icon: 'lucide:hand-heart',
+      label: 'Email',
+      href: 'mailto:ziva.wernick@gmail.com',
+      icon: 'lucide:mail',
     },
   ],
 })
