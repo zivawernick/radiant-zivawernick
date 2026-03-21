@@ -16,12 +16,12 @@ const { icon, title, subtitle } = Astro.props
 <style>
   .tech-avatar {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.5rem;
     border: 1px solid var(--border-color-subtle);
     border-radius: var(--radius-md);
     padding: 0.75rem;
-    max-width: 190px;
+    max-width: 220px;
     list-style: none;
   }
 
@@ -49,9 +49,6 @@ const { icon, title, subtitle } = Astro.props
   .title {
     font-size: 0.95rem;
     font-weight: 500;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   .subtitle {
