@@ -1,0 +1,61 @@
+---
+import { Icon } from 'astro-icon/components'
+const { icon, title, subtitle } = Astro.props
+---
+
+<li class="tech-avatar">
+  <div class="tech-avatar-icon-wrap" aria-hidden="true">
+    <Icon name={icon} class="tech-avatar-icon" />
+  </div>
+  <div class="tech-avatar-content">
+    <span class="title">{title}</span>
+    {subtitle && <span class="subtitle">{subtitle}</span>}
+  </div>
+</li>
+
+<style>
+  .tech-avatar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid var(--border-color-subtle);
+    border-radius: var(--radius-md);
+    padding: 0.75rem;
+    max-width: 190px;
+    list-style: none;
+  }
+
+  .tech-avatar-icon-wrap {
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tech-avatar-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    display: block;
+  }
+
+  .tech-avatar-content {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .subtitle {
+    font-size: 0.75rem;
+    opacity: 0.7;
+  }
+</style>

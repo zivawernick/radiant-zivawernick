@@ -8,6 +8,7 @@ import FeaturedProjects from '@components/FeaturedProjects.astro'
 import FeaturedPosts from '@components/FeaturedPosts.astro'
 import { Accordion, AccordionItem, Avatar, AvatarGroup, Heading, Link } from 'accessible-astro-components'
 import { Icon } from 'astro-icon/components'
+import TechAvatar from '@components/TechAvatar.astro'
 ---
 
 <DefaultLayout title="Ziva Wernick - Social Impact Software Developer" useTitleTemplate={false}>
@@ -37,59 +38,111 @@ import { Icon } from 'astro-icon/components'
       */}
     </ContentMedia>
   </div>
-
+  
   <section id="tech-stack" class="my-64">
-    <div class="space-content container">
-      <Heading level="h2">Technical Stack</Heading>
-      <p class="text-2xl">
-        A comprehensive list of the technologies and tools I use to build accessible, high-performance web applications.
-      </p>
-      <AvatarGroup display="grid" gridItemsSize="300px" gridGap="2rem">
-        <Avatar initials="TS" title="TypeScript" subtitle="Language" />
-        <Avatar initials="RT" title="React" subtitle="Frontend" />
-        <Avatar initials="AS" title="Astro" subtitle="Framework" />
-        <Avatar initials="TW" title="Tailwind CSS" subtitle="Styling" />
-        <Avatar initials="ND" title="Node.js" subtitle="Backend" />
-        <Avatar initials="GH" title="GitHub" subtitle="Source Control" />
-        <Avatar initials="AC" title="Accessibility" subtitle="WCAG 2.2" />
-        <Avatar initials="PX" title="Playwright" subtitle="Testing" />
-        <Avatar initials="VI" title="Vite" subtitle="Build Tool" />
+  <div class="space-content container">
+    <Heading level="h2">Technical Stack</Heading>
+    <p class="text-2xl">
+      A comprehensive list of the technologies and tools I use to build impactful, accessible, high-performance software solutions and web applications.
+    </p>
+    
+    <!-- Languages -->
+    <section class="mt-8" aria-labelledby="skills-languages">
+      <Heading id="skills-languages" level="h3" size="h4">Languages</Heading>
+      <AvatarGroup display="grid" gridItemsSize="200px" gridGap="1.5rem">
+        <TechAvatar icon="mdi:language-javascript" title="JavaScript" />
+        <TechAvatar icon="mdi:language-typescript" title="TypeScript" />
+        <TechAvatar icon="mdi:language-java" title="Java" />
+        <TechAvatar icon="mdi:language-python" title="Python" />
+        <TechAvatar icon="mdi:language-c" title="C" />
+        <TechAvatar icon="mdi:database" title="SQL" />
+        <TechAvatar icon="mdi:language-html5" title="HTML" />
+        <TechAvatar icon="mdi:language-css3" title="CSS" />
       </AvatarGroup>
-    </div>
-  </section>
+    </section>
+
+    <!-- Frameworks & Platforms -->
+    <section class="mt-8" aria-labelledby="skills-frameworks">
+      <Heading id="skills-frameworks" level="h3" size="h4">Frameworks & Platforms</Heading>
+      <AvatarGroup display="grid" gridItemsSize="200px" gridGap="1.5rem">
+        <TechAvatar icon="mdi:react" title="React" subtitle="Frontend" />
+        <TechAvatar icon="simple-icons:astro" title="Astro" subtitle="Frontend" />
+        <TechAvatar icon="mdi:nodejs" title="Node.js" subtitle="Backend" />
+        <TechAvatar icon="simple-icons:wix" title="Wix Velo" subtitle="Platform" />
+      </AvatarGroup>
+    </section>
+
+    <!-- Styling & UI -->
+    <section class="mt-8" aria-labelledby="skills-styling">
+      <Heading id="skills-styling" level="h3" size="h4">Styling & UI</Heading>
+      <AvatarGroup display="grid" gridItemsSize="200px" gridGap="1.5rem">
+        <TechAvatar icon="simple-icons:tailwindcss" title="Tailwind CSS" subtitle="Styling" />
+        <TechAvatar icon="simple-icons:figma" title="Figma" subtitle="Design Tool" />
+      </AvatarGroup>
+    </section>
+
+    <!-- Tooling -->
+    <section class="mt-8" aria-labelledby="skills-tooling">
+      <Heading id="skills-tooling" level="h3" size="h4">Tooling</Heading>
+      <AvatarGroup display="grid" gridItemsSize="200px" gridGap="1.5rem">
+        <TechAvatar icon="mdi:git" title="Git" subtitle="Source Control" />
+        <TechAvatar icon="simple-icons:github" title="GitHub" subtitle="Source Control" />
+        <TechAvatar icon="mdi:npm" title="NPM" subtitle="Package Manager" />
+        <TechAvatar icon="simple-icons:vite" title="Vite" subtitle="Build Tool" />
+      </AvatarGroup>
+    </section>
+
+    <!-- Specializations -->
+    <section class="mt-8" aria-labelledby="skills-specializations">
+      <Heading id="skills-specializations" level="h3" size="h4">Specializations</Heading>
+      <AvatarGroup display="grid" gridItemsSize="200px" gridGap="1.5rem">
+        <TechAvatar icon="mdi:server" title="Backend development" />
+        <TechAvatar icon="mdi:sitemap" title="System design" />
+        <TechAvatar icon="mdi:shield-check" title="Data integrity" />
+        <TechAvatar icon="mdi:credit-card-outline" title="Payment processing" />
+        <TechAvatar icon="mdi:layers-triple-outline" title="Full‑stack development" />
+        <TechAvatar icon="mdi:human-wheelchair" title="Accessibility" subtitle="WCAG 2.2" />
+      </AvatarGroup>
+    </section>
+  </div>
+</section>
+
 
   <section id="services" class="my-64">
     <div class="container">
       <Heading level="h2" class="mb-8">Reach New Heights - My Services</Heading>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-        <Feature icon="lucide:accessibility" title="Accessible by default">
-          Keyboard navigation, focus indicators, ARIA labels, semantic HTML, and more. This theme is designed to be
-          inclusive.
+        <Feature icon="lucide:accessibility" title="Web development">
+          Building robust, responsive, and accessible web experiences with clean, maintainable code.
         </Feature>
-        <Feature icon="lucide:puzzle" title="A11Y components">
-          35+ components and counting, all tried and tested for the most optimal accessible experience for your
-          visitors.
+        <Feature icon="lucide:puzzle" title="Data & systems">
+          Designing systems that keep data reliable, traceable, and ready to support real world operations.
         </Feature>
-        <Feature icon="lucide:moon" title="Dark mode">
-          Fully integrated Dark mode gives your users the choice for their favorite viewing mode.
+        <Feature icon="lucide:moon" title="Community & content">
+          Crafting content and strategies that strengthen tech communities and social impact organizations.
         </Feature>
-        <Feature icon="lucide:paintbrush" title="Tailwind 4.0">
-          Use the power of Tailwind to greatly improve your productivity and enhance your developer workflow.
+        <Feature icon="lucide:paintbrush" title="Technical Consulting & Digital ">
+          Get expert guidance on choosing the right tech solutions, setting up workflows, and making your systems work efficiently without hiring a full development team
+          Best for: mission driven organizations that need technical expertise but are not sure where to start.
         </Feature>
-        <Feature icon="lucide:sparkles" title="Prettier">
-          Less worry about formatting your code, let the Astro Prettier integration do the heavy lifting.
+        <Feature icon="lucide:sparkles" title="System Integration & Automation">
+          Design and integrate systems that connect your tools, automate routine work, and keep your data consistent across platforms. 
+          Best for: organizations that rely on multiple systems and want them to work together smoothly.
         </Feature>
-        <Feature icon="lucide:code" title="Oxlint">
-          Fast linter with accessibility-focused rules to ensure you stay on track with the WCAG standards.
+        <Feature icon="lucide:bookmark" title="Custom Web Development">
+          Build professional, user friendly websites with custom functionality using Wix Studio, JavaScript, and modern web technologies. 
+          I specialize in combining the efficiency of Wix with custom code to deliver features like payment systems, dashboards, data integrations, or specialized workflows. 
+          Best for: organizations that have outgrown basic templates.
         </Feature>
-        <Feature icon="lucide:bookmark" title="Blog & portfolio">
-          This theme comes with a fully integrated blog and portfolio, dynamic pages and SEO optimization.
+        <Feature icon="lucide:file-text" title="Website Management & Maintenance">
+          Keep your existing website running smoothly with ongoing technical support, updates, and performance optimization. 
+          I provide reliable, bilingual support for organizations managing websites in English and Hebrew. 
+          Best for: nonprofits and businesses that need technical support without an in house developer.
         </Feature>
-        <Feature icon="lucide:file-text" title="Markdown & MDX">
-          Easily use .md and .mdx pages to build your websites or use it with Netlify CMS.
-        </Feature>
-        <Feature icon="lucide:blocks" title="Design system">
-          The theme offers some very handy utilities to help you build your website faster.
+        <Feature icon="lucide:blocks" title="No Code / Low Code Solutions & Setup">
+          Help you leverage platforms like Wix, Zapier, and other tools to build your digital presence quickly and cost effectively. 
+          I set up solutions you can continue to use, update, and extend on your own. 
+          Best for: small nonprofits, startups, or businesses wanting fast, budget friendly options.
         </Feature>
       </div>
     </div>
@@ -163,6 +216,7 @@ import { Icon } from 'astro-icon/components'
     </div>
   </section>
 
+  <!--
   <section class="mt-64 mb-32">
     <div class="container">
       <Heading level="h2" class="mb-16">Impact in numbers</Heading>
@@ -173,13 +227,51 @@ import { Icon } from 'astro-icon/components'
         <Counter count="48+" title="Months" sub="Since launch" />
       </div>
     </div>
-  </section>
+  </section>  -->
 </DefaultLayout>
 
 <style>
-  .avatar {
-    border: 1px solid var(--border-color-subtle);
-    border-radius: var(--radius-md);
-    padding: var(--space-s);
+  :global(.avatar *),
+  :global(.avatar) {
+    --size: 2.5rem !important;
   }
+
+  :global(.avatar) {
+    border: 1px solid var(--border-color-subtle) !important;
+    border-radius: var(--radius-md) !important;
+    padding: 0.75rem !important;
+    max-width: 190px !important;
+  }
+
+  :global(.avatar .initials) {
+    font-size: 0.8rem !important;
+  }
+
+  :global(.avatar .title) {
+    font-size: 0.95rem !important;
+  }
+
+  :global(.avatar .subtitle) {
+    font-size: 0.75rem !important;
+  }
+
+  :global(.avatar .content) {
+    padding-left: 0.5rem !important;
+  }
+
+  :global(.tech-avatar-replacement) {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--avatar-bg); /* matches library default */
+}
+
+:global(.tech-avatar-icon) {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+}
 </style>
