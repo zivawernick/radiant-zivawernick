@@ -47,9 +47,9 @@ import TechAvatar from '@components/TechAvatar.astro'
     </p>
     
     <!-- Languages -->
-    <section class="mt-8" aria-labelledby="skills-languages">
+    <section class="tech-section" aria-labelledby="skills-languages">
       <Heading id="skills-languages" level="h3" size="h4">Languages</Heading>
-      <AvatarGroup display="grid" gridItemsSize="200px" gridGap="1.5rem">
+      <AvatarGroup display="grid" gridItemsSize="160px" gridGap="0.75rem">
         <TechAvatar icon="mdi:language-javascript" title="JavaScript" />
         <TechAvatar icon="mdi:language-typescript" title="TypeScript" />
         <TechAvatar icon="mdi:language-java" title="Java" />
@@ -62,9 +62,9 @@ import TechAvatar from '@components/TechAvatar.astro'
     </section>
 
     <!-- Frameworks & Platforms -->
-    <section class="mt-8" aria-labelledby="skills-frameworks">
+    <section class="tech-section" aria-labelledby="skills-frameworks">
       <Heading id="skills-frameworks" level="h3" size="h4">Frameworks & Platforms</Heading>
-      <AvatarGroup display="grid" gridItemsSize="200px" gridGap="1.5rem">
+      <AvatarGroup display="grid" gridItemsSize="160px" gridGap="0.75rem">
         <TechAvatar icon="mdi:react" title="React" subtitle="Frontend" />
         <TechAvatar icon="simple-icons:astro" title="Astro" subtitle="Frontend" />
         <TechAvatar icon="mdi:nodejs" title="Node.js" subtitle="Backend" />
@@ -72,19 +72,19 @@ import TechAvatar from '@components/TechAvatar.astro'
       </AvatarGroup>
     </section>
 
-    <!-- Styling & UI -->
-    <section class="mt-8" aria-labelledby="skills-styling">
+      <!-- Styling & UI -->
+    <section class="tech-section" aria-labelledby="skills-styling">
       <Heading id="skills-styling" level="h3" size="h4">Styling & UI</Heading>
-      <AvatarGroup display="grid" gridItemsSize="200px" gridGap="1.5rem">
+      <AvatarGroup display="grid" gridItemsSize="160px" gridGap="0.75rem">
         <TechAvatar icon="simple-icons:tailwindcss" title="Tailwind CSS" subtitle="Styling" />
         <TechAvatar icon="simple-icons:figma" title="Figma" subtitle="Design Tool" />
-      </AvatarGroup>
+       </AvatarGroup>
     </section>
 
     <!-- Tooling -->
-    <section class="mt-8" aria-labelledby="skills-tooling">
+    <section class="tech-section" aria-labelledby="skills-tooling">
       <Heading id="skills-tooling" level="h3" size="h4">Tooling</Heading>
-      <AvatarGroup display="grid" gridItemsSize="200px" gridGap="1.5rem">
+      <AvatarGroup display="grid" gridItemsSize="160px" gridGap="0.75rem">
         <TechAvatar icon="mdi:git" title="Git" subtitle="Source Control" />
         <TechAvatar icon="simple-icons:github" title="GitHub" subtitle="Source Control" />
         <TechAvatar icon="mdi:npm" title="NPM" subtitle="Package Manager" />
@@ -93,9 +93,9 @@ import TechAvatar from '@components/TechAvatar.astro'
     </section>
 
     <!-- Specializations -->
-    <section class="mt-8" aria-labelledby="skills-specializations">
+    <section class="tech-section" aria-labelledby="skills-specializations">
       <Heading id="skills-specializations" level="h3" size="h4">Specializations</Heading>
-      <AvatarGroup display="grid" gridItemsSize="200px" gridGap="1.5rem">
+      <AvatarGroup display="grid" gridItemsSize="160px" gridGap="0.75rem">
         <TechAvatar icon="mdi:server" title="Backend development" />
         <TechAvatar icon="mdi:sitemap" title="System design" />
         <TechAvatar icon="mdi:shield-check" title="Data integrity" />
@@ -106,7 +106,6 @@ import TechAvatar from '@components/TechAvatar.astro'
     </section>
   </div>
 </section>
-
 
   <section id="services" class="my-64">
     <div class="container">
@@ -231,47 +230,12 @@ import TechAvatar from '@components/TechAvatar.astro'
 </DefaultLayout>
 
 <style>
-  :global(.avatar *),
-  :global(.avatar) {
-    --size: 2.5rem !important;
+  #tech-stack .tech-section + .tech-section {
+    margin-top: 2.5rem;
   }
 
-  :global(.avatar) {
-    border: 1px solid var(--border-color-subtle) !important;
-    border-radius: var(--radius-md) !important;
-    padding: 0.75rem !important;
-    max-width: 190px !important;
+  #tech-stack :global(ul) {
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, 160px);
   }
-
-  :global(.avatar .initials) {
-    font-size: 0.8rem !important;
-  }
-
-  :global(.avatar .title) {
-    font-size: 0.95rem !important;
-  }
-
-  :global(.avatar .subtitle) {
-    font-size: 0.75rem !important;
-  }
-
-  :global(.avatar .content) {
-    padding-left: 0.5rem !important;
-  }
-
-  :global(.tech-avatar-replacement) {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--avatar-bg); /* matches library default */
-}
-
-:global(.tech-avatar-icon) {
-  width: 1.5rem;
-  height: 1.5rem;
-  display: block;
-}
 </style>
