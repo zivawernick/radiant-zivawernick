@@ -63,7 +63,7 @@ export default defineThemeConfig({
       {
         type: 'link',
         label: 'Go to my LinkedIn page, opens in new tab',
-        href: 'https://www.linkedin.com/in/zivawernick/',
+        href: 'https://www.linkedin.com/in/ziva-wernick/',
         icon: 'lucide:linkedin',
         external: true,
         excludeFromLauncher: true,
@@ -78,7 +78,7 @@ export default defineThemeConfig({
     },
     {
       label: 'Linkedin',
-      href: 'https://www.linkedin.com/in/zivawernick/',
+      href: 'https://www.linkedin.com/in/ziva-wernick/',
       icon: 'lucide:linkedin',
     },
     {
