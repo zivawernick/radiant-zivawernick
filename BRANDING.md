@@ -14,12 +14,11 @@ This document tracks the steps taken to transform the Accessible Astro Starter t
 - [X] Update `name` to "Ziva Wernick".
 - [X] Update `seo.title` and `seo.description`.
 - [X] Replace default `socials` with personal links (GitHub, LinkedIn, etc.).
-- [ ] Prune `navigation` items to remove template-specific demo pages.
 - [X] Update `colors` (primary, secondary, neutral, outline) with brand hex codes.
 
 ## 3. Visual Assets
 - [X] Replace `src/assets/img/logo.svg` with personal logo.
-- [ ] Replace `public/favicon.svg` with personal icon.
+- [X] Replace `public/favicon.svg` with personal icon.
 - [ ] Replace `public/social-preview-image.png` with site share image.
 
 ## 4. Page Content (`src/pages/`)
