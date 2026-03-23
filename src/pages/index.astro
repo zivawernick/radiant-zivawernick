@@ -9,21 +9,23 @@ import FeaturedPosts from '@components/FeaturedPosts.astro'
 import { Accordion, AccordionItem, Avatar, AvatarGroup, Heading, Link } from 'accessible-astro-components'
 import { Icon } from 'astro-icon/components'
 import TechAvatar from '@components/TechAvatar.astro'
+
 ---
 
 <DefaultLayout title="Ziva Wernick - Social Impact Software Developer" useTitleTemplate={false}>
   <Hero />
 
   <div id="about">
-    <ContentMedia imgSrc="/profile2.jpg">
+    <ContentMedia imgSrc="profile2.jpg">
       <Heading level="h2">About Ziva Wernick</Heading>
       {
-      <p class="text-2xl">
+      <p class="text-2x1">
         I’m a Software Developer with 5 years of experience building systems that matter. Currently at The Jaffa Institute, I design and maintain data infrastructure supporting social impact programs across Israel and the U.S.
       </p>
-      <p class="text-2xl">
+      <p class="text-2x1">
         My technical expertise spans React, Java, Python, and database management, with a strong focus on backend development, system design, and data integrity for high volume operations. I’m passionate about leveraging technology for Tikun Olam—repairing the world.
       </p>
+     
       /* 
       <p class="text-2xl">
         This theme provides plenty of tried and tested Accessible Astro Components. Some are native to this theme and a
@@ -34,13 +36,13 @@ import TechAvatar from '@components/TechAvatar.astro'
       </p>
       */}
     </ContentMedia>
-    <ContentMedia imgSrc="/wcag-compliant.webp" reverseImg={true}>
-      <Heading level="h2">WCAG 2.2 AA compliant</Heading>
+    <ContentMedia imgSrc="/laptop.webp" reverseImg={true}>
+      <!--<Heading level="h2">WCAG 2.2 AA compliant</Heading> -->
       {
-        <p>
+         <p class="text-2x1">
           In 2019, I made Aliyah to Israel and have since navigated a new language, culture, and systems while building my career in tech. As a neurodivergent developer, imagination is my superpower; it fuels creative problem solving, content creation, and my drive to make tech more inclusive.
-          </p>
-        <p>
+        </p>
+        <p class="text-2x1">
           I serve as Community Manager for Women in Tech Israel and am a member of the Lime Connect Network. I’m committed to empowering underrepresented voices in tech, building supportive communities, and using my cross cultural experience to connect people and ideas.
         </p>
       /* 
