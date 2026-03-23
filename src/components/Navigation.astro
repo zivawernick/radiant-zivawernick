@@ -42,15 +42,22 @@ import { LauncherTrigger } from 'accessible-astro-launcher'
     const setActiveMenuItem = (): void => {
       const mobileDesktopMenus = mainNav.querySelectorAll('nav > ul')
       const currentPathname = window.location.pathname
+      const currentHash = window.location.hash
 
       mobileDesktopMenus.forEach((menu) => {
         const menuItems = [...menu.querySelectorAll('a[href]:not([rel*="external"])')] as HTMLAnchorElement[]
 
         menuItems.forEach((menuItem) => {
-          if (currentPathname.includes(menuItem.pathname.replaceAll('/', '')) && menuItem.textContent !== 'Home') {
-            menuItem.classList.add('is-active')
-            menuItem.setAttribute('aria-current', 'page')
-          } else if (menuItem.textContent === 'Home' && currentPathname === '/') {
+          menuItem.classList.remove('is-active')
+          menuItem.removeAttribute('aria-current')
+
+          const isHomeLink = menuItem.textContent?.trim() === 'Home'
+          const isSectionLink = menuItem.pathname === '/' && menuItem.hash !== ''
+          const isActiveSection = isSectionLink && currentPathname === '/' && currentHash === menuItem.hash
+          const isActivePage = !isSectionLink && menuItem.pathname === currentPathname
+          const isActiveHome = isHomeLink && currentPathname === '/' && currentHash === ''
+
+          if (isActiveSection || isActivePage || isActiveHome) {
             menuItem.classList.add('is-active')
             menuItem.setAttribute('aria-current', 'page')
           }
