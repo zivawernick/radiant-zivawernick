@@ -33,7 +33,8 @@ interface Props {
 const { class: className, limit = 3, title = 'Featured projects' } = Astro.props
 
 // Get projects from content collection
-const projects = await getCollection('projects')
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order)
+
 const projectImages = [projectImage1, projectImage2, projectImage3]
 
 // Limit projects and add featured images

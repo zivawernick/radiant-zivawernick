@@ -7,7 +7,7 @@ import { getCollection, render } from 'astro:content'
 import type { CollectionEntry } from 'astro:content'
 
 export async function getStaticPaths() {
-  const projects = await getCollection('projects')
+  const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order)
 
   const projectImages = [
     { src: '/projects/project-image-1.png' },
