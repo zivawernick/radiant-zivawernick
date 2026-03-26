@@ -23,8 +23,9 @@ const { src = '/astronaut-hero-img.webp' }: Props = Astro.props
     <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
       <div class="flex flex-col items-center gap-8 md:items-start">
         <h1 class="text-center text-6xl md:text-left lg:text-8xl">
-          <slot><span class="text-gradient">Ziva Wernick</span> Software Developer</slot>
+          <slot><span class="text-gradient">Ziva Wernick</span> </slot>
         </h1>
+        <h2>Software Developer Building Tech for Social Impact</h2>
         <div class="flex flex-col gap-3 min-[500px]:flex-row">
           <Link
             href="https://github.com/ziva-wernick/radiant-zivawernick"
@@ -36,18 +37,16 @@ const { src = '/astronaut-hero-img.webp' }: Props = Astro.props
             <Icon aria-hidden="true" name="lucide:star" size="1.5rem" />
             Follow on GitHub
           </Link>
-          <!--
           <Link
-            href="https://accessible-astro.incluud.dev/"
+            href="/contact"
             isButton
             type="secondary"
             animateOnHover
             animationType="boop"
           >
             <Icon aria-hidden="true" name="lucide:bookmark" size="1.5rem" />
-            Read the docs
+            Contact Ziva
           </Link>
-        --> 
         </div>
       </div>
       <Image class="hidden lg:block" src={src} alt="" decoding="async" width={800} height={600} loading="eager" />
