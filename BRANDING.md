@@ -22,7 +22,7 @@ This document tracks the steps taken to transform the Accessible Astro Starter t
 - [ ] Replace `public/social-preview-image.png` with site share image.
 
 ## 4. Page Content (`src/pages/`)
-- [ ] **Index**: Rewrite `Hero` text and "Features" section.
+- [X] **Index**: Rewrite `Hero` text and "Features" section.
 - [ ] **About/FAQ**: Update sections with personal details.
 - [ ] **Projects/Blog**: Replace placeholder MDX files with real content.
 
