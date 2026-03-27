@@ -24,34 +24,36 @@ const { src = '/watermarked-moon.jpg' }: Props = Astro.props
     aria-hidden="true"
   ></div>
   <div class="container relative z-10 flex min-h-[calc(75svh+100px)] items-center py-20 md:py-28">
-    <div class="flex max-w-3xl flex-col items-center gap-8 text-center md:items-start md:text-left">
-      <h1 class="text-6xl text-white md:text-7xl lg:text-8xl">
-        <slot><span class="text-gradient">Ziva Wernick</span> </slot>
-      </h1>
-      <h2 class="max-w-2xl text-pretty text-xl font-medium text-white/92 md:text-2xl">
-        Software Developer Building Tech for Social Impact
-      </h2>
-      <div class="flex flex-col gap-3 min-[500px]:flex-row">
-        <Link
-          href="https://github.com/ziva-wernick/radiant-zivawernick"
-          isButton
-          type="primary"
-          animateOnHover
-          animationType="boop"
-        >
-          <Icon aria-hidden="true" name="lucide:star" size="1.5rem" />
-          Follow me on GitHub
-        </Link>
-        <Link
-          href="/contact"
-          isButton
-          type="secondary"
-          animateOnHover
-          animationType="boop"
-        >
-          <Icon aria-hidden="true" name="lucide:bookmark" size="1.5rem" />
-          Contact Ziva
-        </Link>
+    <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
+      <div class="flex flex-col items-center gap-8 md:items-start">
+        <h1 class="text-center text-6xl md:text-left lg:text-8xl">
+          <slot><span class="text-gradient">Ziva Wernick</span> </slot>
+        </h1>
+        <h2 class="max-w-2xl text-pretty text-xl font-medium text-white/92 md:text-2xl">
+          Software Developer Building Tech for Social Impact
+        </h2>
+        <div class="flex flex-col gap-3 min-[500px]:flex-row">
+          <Link
+            href="https://github.com/ziva-wernick/radiant-zivawernick"
+            isButton
+            type="primary"
+            animateOnHover
+            animationType="boop"
+          >
+            <Icon aria-hidden="true" name="lucide:star" size="1.5rem" />
+            Follow me on GitHub
+          </Link>
+          <Link
+            href="/contact"
+            isButton
+            type="secondary"
+            animateOnHover
+            animationType="boop"
+          >
+            <Icon aria-hidden="true" name="lucide:bookmark" size="1.5rem" />
+            Contact Ziva
+          </Link>
+        </div>
       </div>
     </div>
   </div>
@@ -65,12 +67,11 @@ const { src = '/watermarked-moon.jpg' }: Props = Astro.props
   .text-gradient {
     background: linear-gradient(
       315deg,
-      rgb(255 255 255 / 1) 20%,
-      rgb(221 233 255 / 0.82) 100%
+      light-dark(var(--color-primary-300), var(--color-secondary-100)) 25%,
+      light-dark(var(--color-secondary-300), var(--color-primary-200))
     );
     background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 24px rgb(255 255 255 / 0.1);
   }
 </style>

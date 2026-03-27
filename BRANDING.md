@@ -19,7 +19,7 @@ This document tracks the steps taken to transform the Accessible Astro Starter t
 ## 3. Visual Assets
 - [X] Replace `src/assets/img/logo.svg` with personal logo.
 - [X] Replace `public/favicon.svg` with personal icon.
-- [ ] Replace `public/social-preview-image.png` with site share image.
+- [X] Replace `public/social-preview-image.png` with site share image.
 
 ## 4. Page Content (`src/pages/`)
 - [X] **Index**: Rewrite `Hero` text and "Features" section.
