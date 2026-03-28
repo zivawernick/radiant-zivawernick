@@ -1,67 +1,82 @@
 ---
 title: CALMe
 author: Ziva Wernick
-description: CALMe is an offline-first progressive web app that provides immediate, accessible mental health support during crisis situations. Built for civilians experiencing distress, it delivers trauma-informed conversations and calming activities without requiring network connectivity.
-tags: ['Code for Resiliance', 'Hackathon', ]
+role: Co-founder and Team Lead
+description: CALMe is an offline-first progressive web app delivering trauma-informed mental health support via the Maa'se Model for PTSD prevention during crises. Designed for civilians in distress, it offers conversational guidance and calming activities without internet access.
+tags: ['Code for Resilience', 'Hackathon', 'Mental Health', 'PWA', 'Trauma Support', 'Team Project']
 order: 1
 ---
 
 ## Project Overview
 
-Our team developed an offline-first progressive web app that provides immediate, accessible mental health support during crisis situations. Built for civilians experiencing distress, it delivers trauma-informed conversations and calming activities without requiring network connectivity.
+CALMe is a team-built hackathon project from Code for Resilience, providing immediate mental health support in crisis situations. The offline-first PWA guides users through trauma-informed conversations based on the Maa'se Model (מחויבות, עשייה, שאלות, הבנייה) to prevent PTSD, along with calming activities accessible without network connectivity. [lichyot](https://lichyot.org/model-maase/)
 
 import BlockQuote from '@components/BlockQuote.astro'
 import BreakoutImage from '@components/BreakoutImage.astro'
 import { Image } from 'astro:assets'
 
-<BreakoutImage src="/projects/project-image-1.png" decorative={true} />
+<BreakoutImage src="/projects/calme-hero.png" />
+
+## My Role
+
+As Co-founder and Team Lead, I coordinated the team including UX/UI architect, therapeutic content developer, resilience expert, and DevOps engineer. I shaped the product vision, designed the chat interface following the Maa'se Model, and oversaw offline data storage implementation. [prezi](https://prezi.com/p/e9kibihm8hgw/calme/)
+
+## How It Works
+
+Users interact with a natural chat interface that follows the four stages of the Maa'se Model: building commitment, encouraging action, asking concrete questions to shift to rational thinking, and constructing safety. Calming activities like breathing exercises are available offline via service workers and IndexedDB. [lichyot](https://lichyot.org/model-maase/)
+
+The app ensures all content loads instantly in crises, delivering psychological first aid to civilians experiencing acute stress responses. [codeforresilience](https://www.codeforresilience.com/)
 
 ## Technical Challenges
 
-One of the biggest challenges was creating a chat like interface that followed the psychological and academic outline of using the Maa'se Model  for PTSD prevention, while allowing users to interact with the app in a natural way. We also had to ensure that all content was available offline, which required careful planning of data storage and retrieval.
+A key challenge was implementing a conversational UI that adheres to the Maa'se Model's psychological structure while feeling intuitive and natural for users in distress. Ensuring full offline functionality required optimizing service workers, caching trauma-informed scripts, and handling data persistence without backend reliance. [prezi](https://prezi.com/p/e9kibihm8hgw/calme/)
+
+We balanced academic fidelity with user experience, adapting Hebrew-originated model stages for global accessibility in a PWA format. [lichyot](https://lichyot.org/model-maase/)
+
+## Tech Stack
+Progressive Web App (PWA), Service Workers, IndexedDB, JavaScript, Trauma-Informed Design, Maa'se Model Implementation
+
+## Impact
+
+CALMe empowers civilians with immediate, evidence-based tools to mitigate PTSD risk during traumatic events, bridging gaps in mental health access where connectivity fails. Built for real-world resilience, it supports acute stress response intervention within the critical first 48 hours. [codeforresilience](https://www.codeforresilience.com/)
+
+**Code for Resilience Hackathon Project.**
 
 ## Project Gallery
 
 <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
   <Image
-    src="/projects/project-image-1.png"
-    alt="Smart home assistant interface showing voice command visualization"
+    src="/projects/calme-1.png"
+    alt="CALMe chat interface guiding user through Maa'se Model stage"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
   <Image
-    src="/projects/project-image-2.png"
-    alt="User interacting with the smart home system via voice commands"
+    src="/projects/calme-2.png"
+    alt="Offline calming activity screen in CALMe app"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
   <Image
-    src="/projects/project-image-3.png"
-    alt="Haptic feedback device component of the smart home system"
+    src="/projects/calme-3.png"
+    alt="PWA install prompt and offline mode indicator"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
   <Image
-    src="/projects/project-image-4.png"
-    alt="Dashboard showing analytics of voice command usage patterns"
+    src="/projects/calme-4.png"
+    alt="Team collaboration on CALMe development"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
 </div>
 
-{/* 
-## Testimonial
+## Repo
 
-<BlockQuote author="Maria Rodriguez, Beta Tester">
-  This system has given me back my independence at home. The voice controls are so natural, and the haptic feedback
-  helps me confirm every action without needing to see anything.
-</BlockQuote>
+[View GitHub Repo](https://github.com/CALMe25/CALMe)
 
-<BreakoutImage src="/projects/project-image-2.png" decorative={true} />
-
-The project continues to evolve with regular updates based on user feedback, with a focus on expanding support for multiple languages and additional accessibility features.
-*/}
+<BreakoutImage src="/projects/calme-hero.png" />

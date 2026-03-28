@@ -10,6 +10,7 @@ const projects = defineCollection({
   schema: z.object({
     title: z.string(),
     author: z.string(),
+    role: z.string().default('Project Creator'),
     description: z.string(),
     tags: z.array(z.string()).default([]),
     order: z.number().int().default(999),
