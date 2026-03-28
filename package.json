@@ -5,6 +5,7 @@
   "author": "Ziva Wernick",
   "license": "MIT",
   "type": "module",
+  "packageManager": "npm@10.8.2",
   "homepage": "https://github.com/zivawernick/radiant-zivawernick",
   "scripts": {
     "dev": "astro dev",
@@ -56,4 +57,5 @@
     "accessible-astro-launcher": "^2.0.0",
     "astro-seo": "^1.1.0"
   }
+  
 }

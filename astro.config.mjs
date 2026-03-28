@@ -42,8 +42,6 @@ export default defineConfig({
   integrations: [compress(), icon(), mdx(), sitemap()],
   vite: enhanceConfigForWorkspace(viteConfig),
   env: {
-    schema: {
-      
-    },
+    schema: {},
   },
 })
