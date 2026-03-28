@@ -2,13 +2,10 @@
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import Hero from '@components/Hero.astro'
 import Feature from '@components/Feature.astro'
-import Counter from '@components/Counter.astro'
 import ContentMedia from '@components/ContentMedia.astro'
 import FeaturedProjects from '@components/FeaturedProjects.astro'
-import { Accordion, AccordionItem, Avatar, AvatarGroup, Heading, Link } from 'accessible-astro-components'
-import { Icon } from 'astro-icon/components'
+import { AvatarGroup, Heading } from 'accessible-astro-components'
 import TechAvatar from '@components/TechAvatar.astro'
-
 ---
 
 <DefaultLayout title="Ziva Wernick - Social Impact Software Developer" useTitleTemplate={false}>
@@ -17,104 +14,97 @@ import TechAvatar from '@components/TechAvatar.astro'
   <div id="about">
     <ContentMedia imgSrc="headshot.webp">
       <Heading level="h2">About Ziva Wernick</Heading>
-      {
-      <p class="text-2x1">
-        I’m a Software Developer with 5 years of experience building systems that matter. Currently at The Jaffa Institute, I design and maintain data infrastructure supporting social impact programs across Israel and the U.S.
-      </p>
-      <p class="text-2x1">
-        My technical expertise spans React, Java, Python, and database management, with a strong focus on backend development, system design, and data integrity for high volume operations. I’m passionate about leveraging technology for Tikun Olam—repairing the world.
-      </p>
-     
- }
-    </ContentMedia>
-    <ContentMedia imgSrc="/laptop.webp" reverseImg={true}>
-      <!--<Heading level="h2">WCAG 2.2 AA compliant</Heading> -->
-      {
-         <p class="text-2x1">
-          In 2019, I made Aliyah to Israel and have since navigated a new language, culture, and systems while building my career in tech. As a neurodivergent developer, imagination is my superpower; it fuels creative problem solving, content creation, and my drive to make tech more inclusive.
-        </p>
-        <p class="text-2x1">
-          I serve as Community Manager for Women in Tech Israel and am a member of the Lime Connect Network. I’m committed to empowering underrepresented voices in tech, building supportive communities, and using my cross cultural experience to connect people and ideas.
-        </p>
-      /* 
       <p class="text-2xl">
-        Using semantic HTML, landmarks, skip links, screen reader friendly content, aria-labels, keyboard accessible
-        navigation and components, clear outlines and tab indicators and the right color contrast, you're more certain of
-        reaching WCAG AA compliance.
+        I'm a Software Developer with 5 years of experience building systems that matter. Currently at The Jaffa
+        Institute, I design and maintain data infrastructure supporting social impact programs across Israel and the
+        U.S.
       </p>
-      */}
+      <p class="text-2xl">
+        My technical expertise spans React, Java, Python, and database management, with a strong focus on backend
+        development, system design, and data integrity for high volume operations. I'm passionate about leveraging
+        technology for Tikkun Olam, repairing the world.
+      </p>
+    </ContentMedia>
+
+    <ContentMedia imgSrc="/laptop.webp" reverseImg={true}>
+      <p class="text-2xl">
+        In 2019, I made Aliyah to Israel and have since navigated a new language, culture, and systems while building
+        my career in tech. As a neurodivergent developer, imagination is my superpower; it fuels creative problem
+        solving, content creation, and my drive to make tech more inclusive.
+      </p>
+      <p class="text-2xl">
+        I serve as Community Manager for Women in Tech Israel and am a member of the Lime Connect Network. I'm
+        committed to empowering underrepresented voices in tech, building supportive communities, and using my cross
+        cultural experience to connect people and ideas.
+      </p>
     </ContentMedia>
   </div>
-  
+
   <section id="tech-stack" class="my-24">
-  <div class="space-content container">
-    <Heading level="h2">Technical Stack</Heading>
-    <p class="text-2xl">
-      A comprehensive list of the technologies and tools I use to build impactful, accessible, high-performance software solutions and web applications.
-    </p>
-    
-    <!-- Languages -->
-    <section class="tech-section" aria-labelledby="skills-languages">
-      <Heading id="skills-languages" level="h3" size="h4">Languages</Heading>
-      <AvatarGroup display="grid" gridItemsSize="160px" gridGap="0.75rem">
-        <TechAvatar icon="mdi:language-javascript" title="JavaScript" />
-        <TechAvatar icon="mdi:language-typescript" title="TypeScript" />
-        <TechAvatar icon="mdi:language-java" title="Java" />
-        <TechAvatar icon="mdi:language-python" title="Python" />
-        <TechAvatar icon="mdi:language-c" title="C" />
-        <TechAvatar icon="mdi:database" title="SQL" />
-        <TechAvatar icon="mdi:language-html5" title="HTML" />
-        <TechAvatar icon="mdi:language-css3" title="CSS" />
-      </AvatarGroup>
-    </section>
+    <div class="space-content container">
+      <Heading level="h2">Technical Stack</Heading>
+      <p class="text-2xl">
+        A comprehensive list of the technologies and tools I use to build impactful, accessible, high-performance
+        software solutions and web applications.
+      </p>
 
-    <!-- Frameworks & Platforms -->
-    <section class="tech-section" aria-labelledby="skills-frameworks">
-      <Heading id="skills-frameworks" level="h3" size="h4">Frameworks & Platforms</Heading>
-      <AvatarGroup display="grid" gridItemsSize="160px" gridGap="0.75rem">
-        <TechAvatar icon="mdi:react" title="React" subtitle="Frontend" />
-        <TechAvatar icon="simple-icons:astro" title="Astro" subtitle="Fullstack" />
-        <TechAvatar icon="mdi:nodejs" title="Node.js" subtitle="Backend" />
-        <TechAvatar icon="simple-icons:wix" title="Wix Velo" subtitle="Platform" />
-      </AvatarGroup>
-    </section>
+      <section class="tech-section" aria-labelledby="skills-languages">
+        <Heading id="skills-languages" level="h3" size="h4">Languages</Heading>
+        <AvatarGroup display="grid" gridItemsSize="160px" gridGap="0.75rem">
+          <TechAvatar icon="mdi:language-javascript" title="JavaScript" />
+          <TechAvatar icon="mdi:language-typescript" title="TypeScript" />
+          <TechAvatar icon="mdi:language-java" title="Java" />
+          <TechAvatar icon="mdi:language-python" title="Python" />
+          <TechAvatar icon="mdi:language-c" title="C" />
+          <TechAvatar icon="mdi:database" title="SQL" />
+          <TechAvatar icon="mdi:language-html5" title="HTML" />
+          <TechAvatar icon="mdi:language-css3" title="CSS" />
+        </AvatarGroup>
+      </section>
 
-      <!-- Styling & UI -->
-    <section class="tech-section" aria-labelledby="skills-styling">
-      <Heading id="skills-styling" level="h3" size="h4">Styling & UI</Heading>
-      <AvatarGroup display="grid" gridItemsSize="160px" gridGap="0.75rem">
-        <TechAvatar icon="simple-icons:tailwindcss" title="Tailwind CSS" subtitle="Styling" />
-        <TechAvatar icon="simple-icons:canva" title="Canva" subtitle="Design Tool" />
-        <TechAvatar icon="simple-icons:daisyui" title="DaisyUI" subtitle="Component Library" />
-        <TechAvatar icon="simple-icons:figma" title="Figma" subtitle="Design Tool" />
-       </AvatarGroup>
-    </section>
+      <section class="tech-section" aria-labelledby="skills-frameworks">
+        <Heading id="skills-frameworks" level="h3" size="h4">Frameworks & Platforms</Heading>
+        <AvatarGroup display="grid" gridItemsSize="160px" gridGap="0.75rem">
+          <TechAvatar icon="mdi:react" title="React" subtitle="Frontend" />
+          <TechAvatar icon="simple-icons:astro" title="Astro" subtitle="Fullstack" />
+          <TechAvatar icon="mdi:nodejs" title="Node.js" subtitle="Backend" />
+          <TechAvatar icon="simple-icons:wix" title="Wix Velo" subtitle="Platform" />
+        </AvatarGroup>
+      </section>
 
-    <!-- Tooling -->
-    <section class="tech-section" aria-labelledby="skills-tooling">
-      <Heading id="skills-tooling" level="h3" size="h4">Tooling</Heading>
-      <AvatarGroup display="grid" gridItemsSize="160px" gridGap="0.75rem">
-        <TechAvatar icon="mdi:git" title="Git" subtitle="Source Control" />
-        <TechAvatar icon="simple-icons:github" title="GitHub" subtitle="Source Control" />
-        <TechAvatar icon="mdi:npm" title="NPM" subtitle="Package Manager" />
-        <TechAvatar icon="simple-icons:vite" title="Vite" subtitle="Build Tool" />
-      </AvatarGroup>
-    </section>
+      <section class="tech-section" aria-labelledby="skills-styling">
+        <Heading id="skills-styling" level="h3" size="h4">Styling & UI</Heading>
+        <AvatarGroup display="grid" gridItemsSize="160px" gridGap="0.75rem">
+          <TechAvatar icon="simple-icons:tailwindcss" title="Tailwind CSS" subtitle="Styling" />
+          <TechAvatar icon="simple-icons:canva" title="Canva" subtitle="Design Tool" />
+          <TechAvatar icon="simple-icons:daisyui" title="DaisyUI" subtitle="Component Library" />
+          <TechAvatar icon="simple-icons:figma" title="Figma" subtitle="Design Tool" />
+        </AvatarGroup>
+      </section>
 
-    <!-- Specializations -->
-    <section class="tech-section" aria-labelledby="skills-specializations">
-      <Heading id="skills-specializations" level="h3" size="h4">Specializations</Heading>
-      <AvatarGroup display="grid" gridItemsSize="190px" gridGap="0.75rem">
-        <TechAvatar icon="mdi:server" title="Backend development" />
-        <TechAvatar icon="mdi:sitemap" title="System design" />
-        <TechAvatar icon="mdi:shield-check" title="Data integrity" />
-        <TechAvatar icon="mdi:credit-card-outline" title="Payment processing" />
-        <TechAvatar icon="mdi:layers-triple-outline" title="Full‑stack development" />
-        <TechAvatar icon="mdi:human-wheelchair" title="Accessibility" subtitle="WCAG 2.2" />
-      </AvatarGroup>
-    </section>
-  </div>
-</section>
+      <section class="tech-section" aria-labelledby="skills-tooling">
+        <Heading id="skills-tooling" level="h3" size="h4">Tooling</Heading>
+        <AvatarGroup display="grid" gridItemsSize="160px" gridGap="0.75rem">
+          <TechAvatar icon="mdi:git" title="Git" subtitle="Source Control" />
+          <TechAvatar icon="simple-icons:github" title="GitHub" subtitle="Source Control" />
+          <TechAvatar icon="mdi:npm" title="NPM" subtitle="Package Manager" />
+          <TechAvatar icon="simple-icons:vite" title="Vite" subtitle="Build Tool" />
+        </AvatarGroup>
+      </section>
+
+      <section class="tech-section" aria-labelledby="skills-specializations">
+        <Heading id="skills-specializations" level="h3" size="h4">Specializations</Heading>
+        <AvatarGroup display="grid" gridItemsSize="190px" gridGap="0.75rem">
+          <TechAvatar icon="mdi:server" title="Backend development" />
+          <TechAvatar icon="mdi:sitemap" title="System design" />
+          <TechAvatar icon="mdi:shield-check" title="Data integrity" />
+          <TechAvatar icon="mdi:credit-card-outline" title="Payment processing" />
+          <TechAvatar icon="mdi:layers-triple-outline" title="Full-stack development" />
+          <TechAvatar icon="mdi:human-wheelchair" title="Accessibility" subtitle="WCAG 2.2" />
+        </AvatarGroup>
+      </section>
+    </div>
+  </section>
 
   <section id="services" class="my-24">
     <div class="container">
@@ -130,27 +120,30 @@ import TechAvatar from '@components/TechAvatar.astro'
           Crafting content and strategies that strengthen tech communities and social impact organizations.
         </Feature>
         <Feature icon="lucide:headset" title="Technical Consulting & Digital Strategy">
-          Get expert guidance on choosing the right tech solutions, setting up workflows, and making your systems work efficiently without hiring a full development team
-          Best for: mission driven organizations that need technical expertise but are not sure where to start.
+          Get expert guidance on choosing the right tech solutions, setting up workflows, and making your systems work
+          efficiently without hiring a full development team. Best for mission driven organizations that need technical
+          expertise but are not sure where to start.
         </Feature>
         <Feature icon="lucide:puzzle" title="System Integration & Automation">
-          Design and integrate systems that connect your tools, automate routine work, and keep your data consistent across platforms. 
-          Best for: organizations that rely on multiple systems and want them to work together smoothly.
+          Design and integrate systems that connect your tools, automate routine work, and keep your data consistent
+          across platforms. Best for organizations that rely on multiple systems and want them to work together
+          smoothly.
         </Feature>
         <Feature icon="lucide:paintbrush" title="Custom Web Development">
-          Build professional, user friendly websites with custom functionality using Wix Studio, JavaScript, and modern web technologies. 
-          I specialize in combining the efficiency of Wix with custom code to deliver features like payment systems, dashboards, data integrations, or specialized workflows. 
-          Best for: organizations that have outgrown basic templates.
+          Build professional, user friendly websites with custom functionality using Wix Studio, JavaScript, and modern
+          web technologies. I specialize in combining the efficiency of Wix with custom code to deliver features like
+          payment systems, dashboards, data integrations, or specialized workflows. Best for organizations that have
+          outgrown basic templates.
         </Feature>
         <Feature icon="lucide:file-text" title="Website Management & Maintenance">
-          Keep your existing website running smoothly with ongoing technical support, updates, and performance optimization. 
-          I provide reliable, bilingual support for organizations managing websites in English and Hebrew. 
-          Best for: nonprofits and businesses that need technical support without an in house developer.
+          Keep your existing website running smoothly with ongoing technical support, updates, and performance
+          optimization. I provide reliable, bilingual support for organizations managing websites in English and Hebrew.
+          Best for nonprofits and businesses that need technical support without an in-house developer.
         </Feature>
         <Feature icon="lucide:blocks" title="No Code / Low Code Solutions & Setup">
-          Help you leverage platforms like Wix, Zapier, and other tools to build your digital presence quickly and cost effectively. 
-          I set up solutions you can continue to use, update, and extend on your own. 
-          Best for: small nonprofits, startups, or businesses wanting fast, budget friendly options.
+          Help you leverage platforms like Wix, Zapier, and other tools to build your digital presence quickly and cost
+          effectively. I set up solutions you can continue to use, update, and extend on your own. Best for small
+          nonprofits, startups, or businesses wanting fast, budget friendly options.
         </Feature>
       </div>
     </div>
@@ -159,82 +152,6 @@ import TechAvatar from '@components/TechAvatar.astro'
   <div id="projects">
     <FeaturedProjects />
   </div>
-
-{/* 
-  <section class="my-24">
-    <div class="container grid grid-cols-1 gap-12 md:grid-cols-2">
-      <div class="flex flex-col items-start gap-4">
-        <Heading level="h2">FAQ</Heading>
-        <p class="text-2xl">
-          This section demonstrates how to effectively use the Accordion component to organize and display frequently
-          asked questions in an accessible and user-friendly way.
-        </p>
-        <Link href="/contact" isButton type="primary" animateOnHover animationType="boop">
-          <Icon aria-hidden="true" name="lucide:headset" size=" 1.5rem" />
-          Contact support team
-        </Link>
-      </div>
-      <div class="space-content">
-        <Accordion>
-          <AccordionItem name="exclusive" title="What is WCAG and why is it important?" open>
-            <p>
-              WCAG (Web Content Accessibility Guidelines) is a set of internationally recognized standards for web
-              accessibility. Following WCAG ensures your website is usable by people with various disabilities,
-              including visual, auditory, physical, and cognitive impairments. It's important not just for
-              accessibility, but also for legal compliance, SEO, and reaching a wider audience.
-            </p>
-          </AccordionItem>
-          <AccordionItem name="exclusive" title="What's the difference between ARIA labels and alt text?">
-            <p>
-              Alt text is specifically for describing images to screen reader users, while ARIA labels (aria-label,
-              aria-labelledby) can describe any element on a page. Alt text is HTML's native way to provide alternative
-              text for images, while ARIA labels are part of the ARIA specification that helps make dynamic content and
-              advanced UI controls more accessible.
-            </p>
-          </AccordionItem>
-          <AccordionItem name="exclusive" title="Why is keyboard navigation important?">
-            <p>
-              Keyboard navigation is essential for users who can't use a mouse, including people with motor
-              disabilities, visual impairments, or those who simply prefer keyboard controls. A website should be fully
-              operable using only a keyboard, with visible focus indicators and logical tab order. This includes being
-              able to access all interactive elements and navigate through content efficiently.
-            </p>
-          </AccordionItem>
-          <AccordionItem name="exclusive" title="What is a sufficient color contrast ratio?">
-            <p>
-              According to WCAG 2.2 AA standards, text should have a minimum contrast ratio of 4.5:1 against its
-              background for regular text, and 3:1 for large text (18pt or 14pt bold). For non-text elements like icons
-              or buttons, a minimum ratio of 3:1 is required. This ensures content is readable for users with visual
-              impairments or color blindness.
-            </p>
-          </AccordionItem>
-          <AccordionItem name="exclusive" title="How do I make custom components accessible?">
-            <p>
-              To make custom components accessible, focus on these key aspects: use semantic HTML where possible,
-              implement proper keyboard support, add appropriate ARIA attributes, manage focus when needed, and ensure
-              adequate color contrast. Always test with screen readers and keyboard navigation. Consider using
-              established design patterns from the <Link href="https://www.w3.org/WAI/ARIA/apg/patterns/"
-                >ARIA Authoring Practices Guide</Link
-              >.
-            </p>
-          </AccordionItem>
-        </Accordion>
-      </div>
-    </div>
-  </section>
-
-  <section class="mt-64 mb-32">
-    <div class="container">
-      <Heading level="h2" class="mb-16">Impact in numbers</Heading>
-      <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
-        <Counter count="1.100+" title="Stars" sub="On GitHub" />
-        <Counter count="35+" title="Accessible" sub="Components" />
-        <Counter count="500+" title="Commits" sub="Merged" />
-        <Counter count="48+" title="Months" sub="Since launch" />
-      </div>
-    </div>
-  </section>
-  */}
 </DefaultLayout>
 
 <style>
