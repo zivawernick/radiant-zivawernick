@@ -15,7 +15,7 @@ import { Icon } from 'astro-icon/components'
   {
     themeConfig.navigation.items.map((item) => (
       <li
-        class={`menu-item ${item.type === 'dropdown' ? 'has-dropdown' : ''} ${item.icon ? 'type-icon animate-rotate' : ''}`}
+        class={`menu-item ${item.type === 'dropdown' ? 'has-dropdown' : ''} ${item.icon ? 'type-icon' : ''}`}
       >
         {item.type === 'dropdown' ? (
           <button aria-haspopup="true" aria-expanded="false">
@@ -50,7 +50,7 @@ import { Icon } from 'astro-icon/components'
   }
   {
     themeConfig.navigation.darkmode && (
-      <li class="menu-item type-icon animate-rotate">
+      <li class="menu-item type-icon">
         <DarkMode>
           <Icon aria-hidden="true" name="lucide:moon" slot="light" />
           <Icon aria-hidden="true" name="lucide:sun" slot="dark" />
