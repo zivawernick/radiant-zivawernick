@@ -23,9 +23,11 @@ This document tracks the steps taken to transform the Accessible Astro Starter t
 
 ## 4. Page Content (`src/pages/`)
 - [X] **Index**: Rewrite `Hero` text and "Features" section.
-- [ ] **About/FAQ**: Update sections with personal details.
-- [ ] **Projects/Blog**: Replace placeholder MDX files with real content.
-
+- [X] **About**: Update About section with personal details.
+- [ ] **Projects**: Replace placeholder MDX files with real content.
+- [X] **Removed Blogs** 
+- [X] **Hide FAQ**
+ 
 ## 5. Maintenance & Updates
 - [ ] **Fetch Updates**: `git fetch upstream`
 - [ ] **Preview Changes**: `git log main..upstream/main --oneline`
@@ -33,3 +35,11 @@ This document tracks the steps taken to transform the Accessible Astro Starter t
 
 ---
 *Last Updated: 2026-03-20*
+
+Next steps/issues
+  - fix active-state logic so the current section
+    link overrides Home
+  - adjust section anchor scrolling so links land
+    correctly with the fixed nav
+  - verify the lightning bolt is the far-right
+    icon if that still matters
