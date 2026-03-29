@@ -83,33 +83,6 @@ const launcherSocialItems = (themeConfig.socials ?? []).map((item) => ({
   icon: item.icon,
   external: item.external ?? false,
 }))
-
-const launcherAccessibleAstroProjects = [
-  {
-    label: 'Accessible Astro Starter',
-    href: 'https://github.com/incluud/accessible-astro-starter',
-  },
-  {
-    label: 'Accessible Astro Dashboard',
-    href: 'https://github.com/incluud/accessible-astro-dashboard',
-  },
-  {
-    label: 'Accessible Astro Components',
-    href: 'https://github.com/incluud/accessible-astro-components',
-  },
-  {
-    label: 'Accessible Astro Docs',
-    href: 'https://github.com/incluud/accessible-astro-docs',
-  },
-  {
-    label: 'Accessible Astro Launcher',
-    href: 'https://github.com/incluud/accessible-astro-launcher',
-  },
-  {
-    label: 'Color Contrast Checker',
-    href: 'https://github.com/incluud/color-contrast-checker',
-  },
-]
 ---
 
 <Launcher id="site-launcher">
@@ -137,17 +110,6 @@ const launcherAccessibleAstroProjects = [
         {launcherProjectItems.map((item) => (
           <LauncherLink label={item.label} href={item.href} keywords={item.keywords}>
             <Icon slot="icon" aria-hidden="true" name="lucide:bookmark" size="16" />
-          </LauncherLink>
-        ))}
-      </LauncherNav>
-    )
-  }
-  {
-    launcherAccessibleAstroProjects.length > 0 && (
-      <LauncherNav label="Accessible Astro Projects">
-        {launcherAccessibleAstroProjects.map((item) => (
-          <LauncherLink label={item.label} href={item.href}>
-            <Icon slot="icon" aria-hidden="true" name="lucide:external-link" size="16" />
           </LauncherLink>
         ))}
       </LauncherNav>
