@@ -47,6 +47,10 @@ import { Icon } from 'astro-icon/components'
     const mainMenu = mainNav.querySelector('ul') as HTMLUListElement | null
     const dropdownMenus = [...document.querySelectorAll('.has-dropdown button')] as HTMLButtonElement[]
 
+    const mobileMenu = mainNav.querySelector('.mobile-menu') as HTMLElement | null
+      const mobileToggle =
+        mainNav.querySelector('.responsive-toggle') as
+        HTMLButtonElement | null
     // functions
     const setActiveMenuItem = (): void => {
       const mobileDesktopMenus = mainNav.querySelectorAll('nav > ul')
@@ -101,8 +105,16 @@ import { Icon } from 'astro-icon/components'
         closeDropdownMenu(dropdownMenus[i])
       }
     }
+    const closeMobileMenu = (): void => {
+        if (!mobileMenu || !mobileToggle) return
+
+        mobileMenu.classList.remove('show')
+        mobileToggle.setAttribute('aria-expanded', 'false')
+        mobileToggle.setAttribute('aria-label', 'Open menu navigation')
+      }
 
     const toggleDropdownMenu = (event: MouseEvent): void => {
+      
       const target = event.target as HTMLButtonElement
       if (target.getAttribute('aria-expanded') === 'false') {
         closeAllDropdownMenus()
@@ -219,7 +231,12 @@ import { Icon } from 'astro-icon/components'
       dropdownMenus.forEach((dropdownMenu) => {
         dropdownMenu.addEventListener('click', toggleDropdownMenu as EventListener)
       })
+    const mobileMenuLinks = mobileMenu?.querySelectorAll('a[href]')
 
+      mobileMenuLinks?.forEach((link) => {
+        link.addEventListener('click', () => { closeMobileMenu()
+        })
+      })
     setActiveMenuItem()
     window.addEventListener('click', (event: MouseEvent) => {
       const element = event.target as Element
