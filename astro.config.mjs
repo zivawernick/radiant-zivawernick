@@ -7,6 +7,8 @@ import sitemap from '@astrojs/sitemap'
 import tailwindcss from '@tailwindcss/vite'
 import { enhanceConfigForWorkspace } from './scripts/workspace-config.js'
 
+import cloudflare from "@astrojs/cloudflare";
+
 // Vite configuration with path aliases and SCSS settings
 const viteConfig = {
   css: {
@@ -41,7 +43,10 @@ export default defineConfig({
   site: 'https://www.zivawernick.com',
   integrations: [compress(), icon(), mdx(), sitemap()],
   vite: enhanceConfigForWorkspace(viteConfig),
+
   env: {
     schema: {},
   },
+
+  adapter: cloudflare()
 })
