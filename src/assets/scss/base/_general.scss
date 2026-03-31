@@ -4,6 +4,12 @@
   navigation: auto;
 }
 
+[id] {
+   scroll-margin-top: 8rem; /* Adjust this value (e.g., 4rem to 8rem) to get
+     the perfect spacing */
+   scroll-behavior: smooth;
+    }
+
 body {
   font-weight: 400;
   font-size: 1.15rem;
