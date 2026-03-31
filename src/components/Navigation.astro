@@ -53,6 +53,7 @@ import { Icon } from 'astro-icon/components'
         HTMLButtonElement | null
     // functions
     const setActiveMenuItem = (): void => {
+    
       const mobileDesktopMenus = mainNav.querySelectorAll('nav > ul')
       const currentPathname = window.location.pathname
       const currentHash = window.location.hash
@@ -66,9 +67,12 @@ import { Icon } from 'astro-icon/components'
 
           const isHomeLink = menuItem.textContent?.trim() === 'Home'
           const isSectionLink = menuItem.pathname === '/' && menuItem.hash !== ''
+          
           const isActiveSection = isSectionLink && currentPathname === '/' && currentHash === menuItem.hash
-          const isActivePage = !isSectionLink && menuItem.pathname === currentPathname
-          const isActiveHome = isHomeLink && currentPathname === '/' && currentHash === ''
+          // Only mark the page as active if we AREN'T looking for a specific section  hash
+          const isActivePage = !isSectionLink && !isHomeLink && menuItem.pathname === currentPathname && currentHash === ''
+          // Home is only active if we are at the root path AND there is no hash
+          const isActiveHome = isHomeLink && currentPathname === '/' && currentHash  === ''
 
           if (isActiveSection || isActivePage || isActiveHome) {
             menuItem.classList.add('is-active')
@@ -238,6 +242,10 @@ import { Icon } from 'astro-icon/components'
         })
       })
     setActiveMenuItem()
+     window.addEventListener('hashchange', setActiveMenuItem)
+     window.addEventListener('popstate', setActiveMenuItem)
+
+    
     window.addEventListener('click', (event: MouseEvent) => {
       const element = event.target as Element
       if (!element.hasAttribute('aria-haspopup') && !element.classList.contains('submenu-item')) {
