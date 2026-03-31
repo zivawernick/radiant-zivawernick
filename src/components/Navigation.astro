@@ -66,9 +66,9 @@ import { Icon } from 'astro-icon/components'
           menuItem.removeAttribute('aria-current')
 
           const isHomeLink = menuItem.textContent?.trim() === 'Home'
-          const isSectionLink = menuItem.pathname === '/' && menuItem.hash !== ''
+          const isSectionLink = menuItem.hash !== ''
           
-          const isActiveSection = isSectionLink && currentPathname === '/' && currentHash === menuItem.hash
+          const isActiveSection = isSectionLink && currentHash === menuItem.hash
           // Only mark the page as active if we AREN'T looking for a specific section  hash
           const isActivePage = !isSectionLink && !isHomeLink && menuItem.pathname === currentPathname && currentHash === ''
           // Home is only active if we are at the root path AND there is no hash
@@ -252,8 +252,44 @@ import { Icon } from 'astro-icon/components'
         closeAllDropdownMenus()
       }
     })
-  })
-</script>
+    // --- SCROLL-SPY LOGIC ---
+       const observerOptions = {
+        root: null,
+        rootMargin: '-50% 0px -50% 0px', // Trigger when the section reaches  the middle of the screen
+        threshold: 0
+        }
+   
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            // If the section is in view, update the squiggle
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute('id')
+              if (id) {
+              // This updates the URL hash *silently* without jumping the page
+               history.replaceState(null, '', `#${id}`)
+               // Manually trigger the squiggle update
+               setActiveMenuItem()
+              }
+           }
+          })
+        }, observerOptions)
+   
+        // Tell the observer to watch every section that has an ID
+        document.querySelectorAll('#about, #services, #tech-stack, #projects').forEach((section) => {
+          observer.observe(section)
+        })
+   
+       // Special case: If scrolled to the very top, clear the hash and set"Home" active
+        window.addEventListener('scroll', () => {
+           if (window.scrollY < 100) {
+             if (window.location.hash !== '') {
+               history.replaceState(null, '', window.location.pathname)
+                  setActiveMenuItem()
+            }
+          }
+        })
+   }) // This closes 'document.addEventListener('astro:page-load'...'
+ </script>
 
 <style lang="scss" is:global>
   @use '../assets/scss/base/mixins' as *;

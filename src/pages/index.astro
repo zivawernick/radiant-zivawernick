@@ -11,8 +11,8 @@ import TechAvatar from '@components/TechAvatar.astro'
 <DefaultLayout title="Ziva Wernick - Social Impact Software Developer" useTitleTemplate={false}>
   <Hero />
 
-  <div id="about">
-    <ContentMedia imgSrc="headshot.webp">
+  <section id="about">
+    <ContentMedia imgSrc="/headshot.webp">
       <Heading level="h2">About Ziva Wernick</Heading>
       <p class="text-2xl">
         I'm a Software Developer with 5 years of experience building systems that matter. Currently at The Jaffa
@@ -38,7 +38,7 @@ import TechAvatar from '@components/TechAvatar.astro'
         cultural experience to connect people and ideas.
       </p>
     </ContentMedia>
-  </div>
+  </section>
 
   <section id="tech-stack" class="my-24">
     <div class="space-content container">
@@ -149,9 +149,9 @@ import TechAvatar from '@components/TechAvatar.astro'
     </div>
   </section>
 
-  <div id="projects">
+  <section id="projects">
     <FeaturedProjects />
-  </div>
+  </section>
 </DefaultLayout>
 
 <style>
