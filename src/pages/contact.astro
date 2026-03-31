@@ -6,7 +6,7 @@ import { Icon } from 'astro-icon/components'
 ---
 
 <DefaultLayout title="Contact">
-  <PageHeader title="Contact" subtitle="Have a question? Wnat help on a project? Get in touch with us!" bgType="gradient" />
+  <PageHeader title="Contact" subtitle="Have a question? Want help on a project? Get in touch with us!" bgType="gradient" />
   <section class="my-16">
     <div class="container">
       <Heading level="h2">Let's talk</Heading>
@@ -32,25 +32,18 @@ import { Icon } from 'astro-icon/components'
 
           <Textarea name="message" label="Message" required />
 
-          <!-- Checkbox group with validation -->
+          <!-- Checkbox group with validation 
           <Fieldset
             name="interests"
             legend="What are you interested in?"
             required
             data-validation="Please select at least one area of interest"
           >
-            <Checkbox name="accessibility" value="a11y" label="Accessibility and inclusive design" />
+            <Checkbox name="Ju" value="a11y" label="Accessibility and inclusive design" />
             <Checkbox name="wcag-compliance" value="wcag" label="WCAG compliance and testing" />
             <Checkbox name="screen-reader" value="sr" label="Screen reader optimization" />
             <Checkbox name="keyboard-nav" value="keyboard" label="Keyboard navigation" />
-          </Fieldset>
-
-          <!-- Radio group (shared names) -->
-          <Fieldset name="experience" legend="Your experience level" required>
-            <Radio name="experience" value="beginner" label="Beginner" />
-            <Radio name="experience" value="intermediate" label="Intermediate" />
-            <Radio name="experience" value="advanced" label="Advanced" />
-          </Fieldset>
+          </Fieldset>-->
 
           <Button htmlType="submit" type="primary">Send Message</Button>
         </Form>
@@ -58,11 +51,11 @@ import { Icon } from 'astro-icon/components'
       <div class="space-content">
         <Heading level="h3">Contact us</Heading>
         <p class="text-lg">
-          Experience the impact we can make together. This contact form showcases our
-          comprehensive form validation system with built-in accessibility features and WCAG 2.2 compliance.
+          Experience the impact we can make together. This contact form allows you to reach out with any questions, project ideas, or collaboration opportunities. 
+          Try it out and see how we can connect! This form is built with built-in accessibility features and WCAG 2.2 compliance.
         </p>
         <p>
-          Our Form component includes automatic validation, proper error handling, semantic HTML structure, and screen
+          This Form component includes automatic validation, proper error handling, semantic HTML structure, and screen
           reader support. Test out the various input types, validation patterns, and interactive elements to see how
           accessibility and usability work together seamlessly.
         </p>

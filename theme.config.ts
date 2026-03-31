@@ -29,23 +29,23 @@ export default defineThemeConfig({
       },
       {
         type: 'link',
-        label: 'Services',
-        href: '/#services',
-      },
-      {
-        type: 'link',
         label: 'About Me',
         href: '/#about',
       },
       {
         type: 'link',
-        label: 'Technical Stack',
-        href: '/#tech-stack',
+        label: 'Services',
+        href: '/#services',
       },
       {
         type: 'link',
         label: 'Projects',
         href: '/#projects',
+      },
+      {
+        type: 'link',
+        label: 'Technical Stack',
+        href: '/#tech-stack',
       },
       {
         type: 'link',
