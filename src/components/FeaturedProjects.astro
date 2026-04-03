@@ -4,9 +4,13 @@ import { Icon } from 'astro-icon/components'
 import { getCollection } from 'astro:content'
 
 // Import images directly for optimization
-import projectImage1 from '@assets/images/projects/project-image-1.png'
-import projectImage2 from '@assets/images/projects/project-image-2.png'
-import projectImage3 from '@assets/images/projects/project-image-3.png'
+import projectImage1 from '@assets/images/projects/project-image-1.png' //calme
+import projectImage2 from '@assets/images/projects/jaffa-institute-banner.webp'
+import projectImage3 from '@assets/images/projects/project-image-3.png' //homegrown
+import projectImage4 from '@assets/images/projects/project-image-4.png' //
+import projectImage5 from '@assets/images/projects/my-warriors-shield.webp'
+import projectImage6 from '@assets/images/projects/keywise-care.webp'
+
 
 /**
  * FeaturedProjects Component
@@ -35,7 +39,7 @@ const { class: className, limit = 3, title = 'Featured projects' } = Astro.props
 // Get projects from content collection
 const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order)
 
-const projectImages = [projectImage1, projectImage2, projectImage3]
+const projectImages = [projectImage1, projectImage2, projectImage3, projectImage4, projectImage5, projectImage6]
 
 // Limit projects and add featured images
 const featuredProjects = projects.slice(0, limit).map((project, index) => ({

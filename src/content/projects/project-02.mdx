@@ -16,11 +16,11 @@ import BreakoutImage from '@components/BreakoutImage.astro'
 import { Image } from 'astro:assets'
 import banner from '../../assets/images/projects/rabbi-gene-hero-with-side-nav.webp'
 import gallery1 from '../../assets/images/projects/rabbi-gene-hero-with-side-nav.webp'
-import img2 from '../../assets/images/projects/project-image-2.png'
-import img3 from '../../assets/images/projects/project-image-3.png'
-import img4 from '../../assets/images/projects/project-image-4.png'
+import gallery2 from '../../assets/images/projects/rabbi-gene-publications.webp'
+import gallery3 from '../../assets/images/projects/rabbi-gene-hero-dark.webp'
+import gallery4 from '../../assets/images/projects/rabbi-gene-antisemetism-preface.webp'
 
-<BreakoutImage src={banner} alt="Rabbi Gene Wernick Website Hero" />
+<BreakoutImage src={gallery1} alt="Rabbi Gene Wernick Website Hero" />
 
 ## My Role
 
@@ -33,31 +33,32 @@ The site features a searchable database of sermons, a blog for long-form article
 THe biggest challange was creating a website that could effectively showcase Rabbi Wernick's extensive body of work and career experience, while also being user-friendly.
 
 ## Project Gallery
+[Rabbi Gene Wernick Website](https://www.gene.rabbiwernick.com)
 
 <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
   <Image
-    src={gallery1}
+    src={gallery2}
     alt="Rabbi Gene Wernick Website with side navigation"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
   <Image
-    src={img2}
+    src={gallery3}
     alt="Rabbi Gene Wernick Website Gallery 2"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
   <Image
-    src={img3}
+    src={gallery4}
     alt="Rabbi Gene Wernick Website Gallery 3"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
   <Image
-    src={img4}
+    src={gallery4}
     alt="Rabbi Gene Wernick Website Gallery 4"
     width={1200}
     height={600}
@@ -65,4 +66,4 @@ THe biggest challange was creating a website that could effectively showcase Rab
   />
 </div>
 
-<BreakoutImage src={gallery1} alt="Rabbi Gene Wernick Website with side navigation" />
+<BreakoutImage src={gallery2} alt="Rabbi Gene Wernick Website with side navigation" />
