@@ -1,83 +1,66 @@
 ---
-title: My Warriors Shield
+title: My Warrior's Shield
 author: Ziva Wernick
-role: Team Member
-description: A team-built web prototype that helps young supporters of breast cancer warriors organize tasks, track mood, and find guidance and resources.
-tags: ['Hackathon', 'Girls in Tech','Health Tech', 'Wix', 'Accessibility', 'Team Project']
+role: Front-end Developer
+description: My Warrior's Shield is a supportive platform providing resources and community for veterans transitioning to civilian life. It offers mental health tools, career guidance, and a secure space for sharing experiences.
+tags: ['Veteran Support', 'Mental Health', 'Community', 'Web Development', 'Resource Hub']
 order: 5
+bannerImage: '../../assets/images/projects/my-warriors-shield.webp'
 ---
 
 ## Project Overview
 
-My Warrior’s Shield is a team-built hackathon project designed to help young supporters of breast cancer warriors feel more empowered and less overwhelmed. The app lets users create custom task lists, track mood and symptoms, and access curated guidance and support resources.
+Transitioning from military to civilian life can be a daunting challenge. My Warrior's Shield provides veterans with the tools and community support they need to navigate this journey successfully, focusing on mental well-being and career development.
 
-import BlockQuote from '@components/BlockQuote.astro'
 import BreakoutImage from '@components/BreakoutImage.astro'
 import { Image } from 'astro:assets'
+import banner from '../../assets/images/projects/my-warriors-shield.webp'
+import img1 from '../../assets/images/projects/project-image-5.png'
+import img2 from '../../assets/images/projects/project-image-4.png'
+import img3 from '../../assets/images/projects/project-image-3.png'
+import img4 from '../../assets/images/projects/project-image-2.png'
 
-<BreakoutImage src="/projects/my-warriors-shield.png" />
+<BreakoutImage src={banner} alt="My Warrior's Shield Banner" />
 
 ## My Role
 
-Our team met and communicated daily to shape the product idea, plan the experience, and divide development work. After the brainstorming phase, I created the page diagram in Figma, suggested using Wix because of its customization capabilities, and worked with Sunaina to start building the site.
-
-I created the website structure, including the member sites, core pages, required links, and the connection between user input forms and profile data. I also helped connect the dashboard logic so the app could call and display stored information through Wix data and APIs.
+As a Front-end Developer, I built the user interface for the resource hub and the community forum. I focused on accessibility and creating a calm, supportive visual environment for users who may be dealing with stress or trauma.
 
 ## How It Works
 
-Users can log in with Google, Facebook, or email and set up a profile for their warrior. The app then takes them to a personalized dashboard where they can add tasks, check off completed actions, and record daily mood check-ins.
-
-The dashboard also includes lightboxes with support information, breast cancer resources, self-care guidance, and suggestions for what to say and what not to say. These features were designed for younger users, especially ages 13 to 18, who want to support a loved one but may not know how.
-
-## Technical Challenges
-
-One of the biggest challenges was that the original development plan had to be scrapped after a backend developer dropped out. Instead of delaying the project, the team pivoted to Wix so we could still deliver a working prototype on time.
-
-That shift required us to adapt our scope, rethink privacy concerns, and balance functionality with platform limitations. It also pushed me to learn more about Wix, its built-in APIs, and how no-code tools can still support meaningful full-stack style product work.
-
-## Tech Stack
-Wix, Figma, JavaScript, Wix Data Collections, Wix APIs, Member Pages
-
-## Impact
-The project was built to help young caregivers feel supported, informed, and capable of helping their loved one through treatment. Rather than leaving users feeling helpless, the app gives them structured ways to help, check in, and stay connected.
-
- **Girls in Tech Virtual Hackathon: Fall 2020 Challenge: 2nd Place**.
+Veterans can access a curated library of resources, participate in moderated discussion forums, and use mental health tracking tools. The platform is designed to be a one-stop-shop for veteran support, bridging the gap between service and civilian life.
 
 ## Project Gallery
 
 <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
   <Image
-    src="/projects/project-image-5.png"
-    alt=""
+    src={img1}
+    alt="Resource Library Interface"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
   <Image
-    src="/projects/project-image-4.png"
-    alt=""
+    src={img2}
+    alt="Community Forum Design"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
   <Image
-    src="/projects/project-image-3.png"
-    alt=""
+    src={img3}
+    alt="Mental Health Tool Mockup"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
   <Image
-    src="/projects/project-image-1.png"
-    alt=""
+    src={img4}
+    alt="Career Guidance Section"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
 </div>
 
-## Devpost
-
-[View Devpost Submission](https://devpost.com/software/how-can-i-help-btpn8v)
-
-<BreakoutImage src="/projects/my-warriors-shield.png" />
+<BreakoutImage src={banner} alt="My Warrior's Shield Banner" />

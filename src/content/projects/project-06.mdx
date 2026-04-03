@@ -1,90 +1,68 @@
 ---
-title: KeyWise Care
+title: Keywise Care
 author: Ziva Wernick
-role: Full-Stack Developer
-description: A professional property care website for overseas homeowners in Israel, built rapidly with Wix to deliver a maintainable, client-facing solution.
-tags: ['Wix', 'Website Development', 'Full-Stack', 'Client Work', 'Property Tech']
-order: 1
+role: Front-end Developer
+description: Keywise Care is a platform connecting car owners with professional technicians for convenient and reliable vehicle maintenance. It simplifies the process of scheduling services and ensures quality care for every vehicle.
+tags: ['Service Platform', 'Car Care', 'Web Development', 'React', 'Scheduling']
+order: 6
+bannerImage: '../../assets/images/projects/keywise-care.webp'
 ---
 
 ## Project Overview
 
-KeyWise Care provides boutique property management services for overseas homeowners in Israel. The website showcases their tiered service packages (External, Essential, Premium), clearly explains offerings like property inspections, bill payments, and emergency coordination, and builds trust through professional presentation.
+Keywise Care is an on-demand car care service designed to make vehicle maintenance easy and accessible. Users can browse services, schedule appointments with qualified technicians, and track the progress of their car's care, all through an intuitive web platform.
 
-[Live Site](https://www.keywisecare.com/)
-
-import BlockQuote from '@components/BlockQuote.astro'
 import BreakoutImage from '@components/BreakoutImage.astro'
 import { Image } from 'astro:assets'
+import banner from '../../assets/images/projects/keywise-care.webp'
+import img1 from '../../assets/images/projects/project-image-1.png'
+import img2 from '../../assets/images/projects/project-image-2.png'
+import img3 from '../../assets/images/projects/project-image-3.png'
+import img4 from '../../assets/images/projects/project-image-4.png'
 
-<BreakoutImage src="/projects/keywise-care.jpg" decorative={true} />
+<BreakoutImage src={banner} alt="Keywise Care Hero Image" />
 
 ## My Role
 
-The main challenge was working with limited input from the founder while delivering a functional, professional site quickly. I focused on understanding the core service offering through the existing site content and built a clean, maintainable solution the client could update independently.
-
-I chose Wix for rapid development with built-in CMS capabilities, ensuring the founder could easily manage service descriptions, pricing, and FAQs without technical expertise.
+I led the front-end development of the platform, focusing on the service booking flow and the technician dashboard. I ensured that the application was responsive and user-friendly, providing a seamless experience for both car owners and service providers.
 
 ## How It Works
 
-The site clearly presents three service tiers with pricing and features:
-- **External Care** ($180/month): Visual exterior inspections, mail collection
-- **Essential Care** ($260/month): Monthly interior checks, bill payments, water activation
-- **Premium Care** ($390/month): Twice-monthly visits, emergency coordination, airport car service
+Users can select from a variety of car care services, choose a convenient time, and get connected with a local technician. The platform provides real-time updates and secure payment options, making it a reliable choice for vehicle maintenance.
 
 Additional pages cover FAQs, services like car care and technician coordination, and build trust through professional design and clear value propositions.
-
-## Technical Challenges
-
-The biggest constraint was gathering detailed requirements from the busy founder. With limited time for strategy discussions, I prioritized building a solid MVP based on the existing service descriptions and common property management needs.
-
-Wix's platform allowed rapid iteration: custom layouts for pricing tables, responsive design for international users, and built-in forms for inquiries. The CMS structure ensures the client can update pricing, add services, or modify FAQs independently.
-
-## Impact
-
-The website gives KeyWise Care professional online presence that clearly communicates their unique value to overseas property owners. It converts visitors into clients by making service packages transparent and trust-building.
-
-The maintainable design means the founder can update content without developer help, providing long-term value.
 
 ## Project Gallery
 
 <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
   <Image
-    src="/projects/keywisecare-1.png"
-    alt="KeyWise Care service packages and pricing"
+    src={img1}
+    alt="Service Booking Interface"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
   <Image
-    src="/projects/keywisecare-2.png"
-    alt="Property care services overview"
+    src={img2}
+    alt="Technician Dashboard Mockup"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
   <Image
-    src="/projects/keywisecare-3.png"
-    alt="FAQ section and trust-building content"
+    src={img3}
+    alt="Service Details View"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
   <Image
-    src="/projects/keywisecare-4.png"
-    alt="Responsive mobile view of service tiers"
+    src={img4}
+    alt="Keywise Care Community Section"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
 </div>
 
-## Live Demo
-
-[Visit KeyWise Care](https://www.keywisecare.com/)
-{/*
-<BlockQuote author="Client Founder">
-  Ziva delivered a professional, easy-to-maintain website exactly when we needed it. The service packages are now crystal clear to potential clients.
-</BlockQuote>*/}
-
-<BreakoutImage src="/projects/keywise-care.jpg" decorative={true} />
+<BreakoutImage src={banner} alt="Keywise Care Hero Image" />

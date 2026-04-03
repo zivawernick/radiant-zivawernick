@@ -1,86 +1,66 @@
 ---
-title: HomeGrown
+title: Homegrown Hero
 author: Ziva Wernick
-role: Team Member
-description: A team-built hackathon prototype for sustainable home gardening that recommends crops, tracks plant growth, and plans for community marketplace features.
-tags: ['Hackathon', 'Girls in Tech', 'Environmental Tech', 'JavaScript', 'APIs', 'Prototyping', 'Team Project']
-order: 4
+role: Front-end Developer & UX Designer
+description: Homegrown Hero is a community-driven platform connecting local farmers with consumers, promoting sustainable agriculture and supporting local economies. It provides an intuitive interface for discovering and purchasing fresh, seasonal produce directly from the source.
+tags: ['E-commerce', 'Sustainability', 'React', 'Community', 'Local Food']
+order: 3
+bannerImage: '../../assets/images/projects/project-image-2.png'
 ---
 
 ## Project Overview
 
-HomeGrown is a team-built hackathon project that helps people start sustainable home gardens by recommending the right crops for their region, tracking plant growth milestones, and planning future marketplace and disease-detection features.
+Homegrown Hero empowers local food systems by creating a direct link between producers and consumers. The platform simplifies the process of finding local farms, understanding their practices, and purchasing their goods, making sustainable eating accessible to everyone in the community.
 
-import BlockQuote from '@components/BlockQuote.astro'
 import BreakoutImage from '@components/BreakoutImage.astro'
 import { Image } from 'astro:assets'
+import banner from '../../assets/images/projects/project-image-2.png'
+import img1 from '../../assets/images/projects/project-image-3.png'
+import img2 from '../../assets/images/projects/project-image-4.png'
+import img3 from '../../assets/images/projects/project-image-5.png'
+import img4 from '../../assets/images/projects/project-image-1.png'
 
-<BreakoutImage src="/projects/homegrown-hero.png" decorative={true} />
+<BreakoutImage src={banner} alt="Homegrown Hero Platform Interface" />
 
 ## My Role
 
-Our team started by researching climate change impacts on urban gardening and surveying real gardeners to identify pain points. From there, we started to build prototypes to address the core challenges: crop selection, monitoring, and community connection.
-
-My contributions focused on building functional prototypes using JavaScript and React to demonstrate crop recommendations, growth tracking, and usability for real-world environmental data. 
+As a Front-end Developer and UX Designer, I focused on creating an engaging and user-friendly experience for both farmers and shoppers. I designed the map-based discovery tool and the streamlined checkout process, ensuring that the platform's mission was reflected in every interaction.
 
 ## How It Works
 
-Users create a profile with their gardening experience and location. The app then recommends crops based on local temperature, humidity, pH, and rainfall data.
-
-It sets growth milestones with reminders and instructions, and lays the groundwork for future features like plant disease diagnosis via AI and a marketplace for buying, selling, or bartering home-grown crops.
-
-## Technical Challenges
-
-The main challenge was turning extensive research into a working prototype under hackathon time constraints. We conducted user surveys to create personas, analyzed climate data challenges, and prototyped solutions for crop recommendation and lifecycle tracking.
-
-Data scarcity made it hard to train models fully, so we focused on a JavaScript prototype that proved the concept while planning for future data collection and community features.
-
-## Impact
-
-The project promotes urban gardening to combat climate change effects on food crops and encourage more home planting to reduce carbon emissions. By making gardening accessible, it helps people grow their own food and build sustainable habits.
-
-**Girls in Tech: Hack for the Environment — 3rd Place**
+Farmers can create profiles to showcase their products and tell their story. Shoppers can search for specific items or browse local farms on an interactive map. The platform handles payments securely and facilitates communication between both parties, fostering a sense of community around local food.
 
 ## Project Gallery
 
 <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
   <Image
-    src="/projects/homegrown-1.png"
-    alt="HomeGrown crop recommendation dashboard"
+    src={img1}
+    alt="Homegrown Hero Farmer Profile"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
   <Image
-    src="/projects/homegrown-2.png"
-    alt="Plant growth milestone tracker"
+    src={img2}
+    alt="Homegrown Hero Interactive Map"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
   <Image
-    src="/projects/homegrown-3.png"
-    alt="Gardening profile and climate data integration"
+    src={img3}
+    alt="Homegrown Hero Product Selection"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
   <Image
-    src="/projects/homegrown-4.png"
-    alt="Future marketplace and community features prototype"
+    src={img4}
+    alt="Homegrown Hero Community Impact"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
 </div>
 
-## Devpost
-
-[View Devpost Submission](https://devpost.com/software/vff)  
-[Hackathon Page](https://hackfortheenvironmentwith-git.devpost.com/)
-
-<BlockQuote author="Hackathon Judge">
-  HomeGrown demonstrates thoughtful environmental impact through practical urban gardening solutions. The prototypes show real scalability potential.
-</BlockQuote>
-
-<BreakoutImage src="/projects/homegrown-hero.png" decorative={true} />
+<BreakoutImage src={banner} alt="Homegrown Hero Platform Interface" />

@@ -5,6 +5,7 @@ role: Co-founder and Team Lead
 description: CALMe is an offline-first progressive web app delivering trauma-informed mental health support via the Maa'se Model for PTSD prevention during crises. Designed for civilians in distress, it offers conversational guidance and calming activities without internet access.
 tags: ['Code for Resilience', 'Hackathon', 'Mental Health', 'PWA', 'Trauma Support', 'Team Project']
 order: 1
+bannerImage: '../../assets/images/projects/project-image-1.png'
 ---
 
 ## Project Overview
@@ -14,8 +15,13 @@ CALMe is a team-built hackathon project from Code for Resilience, providing imme
 import BlockQuote from '@components/BlockQuote.astro'
 import BreakoutImage from '@components/BreakoutImage.astro'
 import { Image } from 'astro:assets'
+import banner from '../../assets/images/projects/calme-logo-transparent.webp'
+import img1 from '../../assets/images/projects/project-image-1.png'
+import img2 from '../../assets/images/projects/project-image-2.png'
+import img3 from '../../assets/images/projects/project-image-3.png'
+import img4 from '../../assets/images/projects/project-image-4.png'
 
-<BreakoutImage src="/projects/calme-hero.png" />
+<BreakoutImage src={banner} alt="CALMe logo" />
 
 ## My Role
 
@@ -46,29 +52,29 @@ CALMe empowers civilians with immediate, evidence-based tools to mitigate PTSD r
 
 <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
   <Image
-    src="/projects/calme-1.png"
-    alt="CALMe chat interface guiding user through Maa'se Model stage"
+    src={img1}
+    alt="CALMe gallery placeholder 1"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
   <Image
-    src="/projects/calme-2.png"
-    alt="Offline calming activity screen in CALMe app"
+    src={img2}
+    alt="CALMe gallery placeholder 2"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
   <Image
-    src="/projects/calme-3.png"
-    alt="PWA install prompt and offline mode indicator"
+    src={img3}
+    alt="CALMe gallery placeholder 3"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
   <Image
-    src="/projects/calme-4.png"
-    alt="Team collaboration on CALMe development"
+    src={img4}
+    alt="CALMe gallery placeholder 4"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
@@ -79,4 +85,5 @@ CALMe empowers civilians with immediate, evidence-based tools to mitigate PTSD r
 
 [View GitHub Repo](https://github.com/CALMe25/CALMe)
 
-<BreakoutImage src="/projects/calme-hero.png" />
+<BreakoutImage src={banner} alt="CALMe logo" />
+
