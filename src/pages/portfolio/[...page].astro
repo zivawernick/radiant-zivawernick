@@ -23,7 +23,7 @@ export const getStaticPaths = (async ({ paginate }) => {
   const projectsWithImages = projects.map((project) => {
     return {
       ...project,
-      featuredImage: project.data.bannerImage || fallbackImage,
+      featuredImage: project.data.thumbnail || fallbackImage,
     }
   })
 

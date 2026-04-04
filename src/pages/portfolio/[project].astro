@@ -30,9 +30,9 @@ const author = {
   bio: project.data.role,
 }
 
-// Fallback image if bannerImage is not provided
+// Fallback image if hero banner is not provided
 const fallbackImage = '/projects/project-image-1.png'
-const featuredImage = project.data.bannerImage || fallbackImage
+const featuredImage = project.data.heroBanner || fallbackImage
 ---
 
 <DefaultLayout title={project.data.title} description={project.data.description} url={`/portfolio/${project.id}`}>
