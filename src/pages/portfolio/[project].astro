@@ -5,6 +5,7 @@ import SocialShares from '@components/SocialShares.astro'
 import { Heading } from 'accessible-astro-components'
 import { getCollection, render } from 'astro:content'
 import type { CollectionEntry } from 'astro:content'
+import fallbackImage from '@assets/images/projects/project-image-1.png'
 
 export async function getStaticPaths() {
   const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order)
@@ -31,7 +32,6 @@ const author = {
 }
 
 // Fallback image if hero banner is not provided
-const fallbackImage = '/projects/project-image-1.png'
 const featuredImage = project.data.heroBanner || fallbackImage
 ---
 
