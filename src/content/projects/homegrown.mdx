@@ -14,6 +14,7 @@ heroBanner: '../../assets/images/projects/homegrown/homegrown-logo.webp'
 Homegrown Hero empowers local food systems by creating a direct link between producers and consumers. The platform simplifies the process of finding local farms, understanding their practices, and purchasing their goods, making sustainable eating accessible to everyone in the community.
 
 import BreakoutImage from '@components/BreakoutImage.astro'
+import Gallery from '@components/Gallery.astro'
 import { Image } from 'astro:assets'
 import banner from '../../assets/images/projects/homegrown/homegrown-logo.webp'
 import img1 from '../../assets/images/projects/homegrown/home-grown-solution.webp'
@@ -33,35 +34,13 @@ Farmers can create profiles to showcase their products and tell their story. Sho
 
 ## Project Gallery
 
-<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-  <Image
-    src={img1}
-    alt="Homegrown Gif of Growing Plant"
-    width={1200}
-    height={600}
-    class="h-[250px] w-full rounded-lg object-cover"
-  />
-  <Image
-    src={img2}
-    alt="Homegrown Hero Interactive Map"
-    width={1200}
-    height={600}
-    class="h-[250px] w-full rounded-lg object-cover"
-  />
-  <Image
-    src={img3}
-    alt="Homegrown Hero Product Selection"
-    width={1200}
-    height={600}
-    class="h-[250px] w-full rounded-lg object-cover"
-  />
-  <Image
-    src={img4}
-    alt="Homegrown Hero Community Impact"
-    width={1200}
-    height={600}
-    class="h-[250px] w-full rounded-lg object-cover"
-  />
-</div>
+<Gallery 
+  images={[
+    { src: img1, alt: "Homegrown Gif of Growing Plant" },
+    { src: img2, alt: "Homegrown Hero Interactive Map" },
+    { src: img3, alt: "Homegrown Hero Product Selection" },
+    { src: img4, alt: "Homegrown Hero Community Impact" }
+  ]} 
+/>
 
 {/*<BreakoutImage src={banner} alt="Homegrown Hero Platform Interface" />*/}

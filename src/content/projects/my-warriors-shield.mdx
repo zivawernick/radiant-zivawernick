@@ -11,6 +11,7 @@ heroBanner: '../../assets/images/projects/my-warriors-shield/my-warriors-shield-
 
 import BlockQuote from '@components/BlockQuote.astro'
 import BreakoutImage from '@components/BreakoutImage.astro'
+import Gallery from '@components/Gallery.astro'
 import { Image } from 'astro:assets'
 import banner from '../../assets/images/projects/my-warriors-shield/my-warriors-shield-home.webp'
 import img1 from '../../assets/images/projects/my-warriors-shield/my-warriors-shield-wireframe.webp'
@@ -55,36 +56,26 @@ The project was built to help young caregivers feel informed, useful, and emotio
 
 ## Project Gallery
 
-<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-  <Image
-    src={img2}
-    alt=""
-    width={1200}
-    height={600}
-    class="h-[250px] w-full rounded-lg object-cover"
-  />
-  <Image
-    src={img3}
-    alt=""
-    width={1200}
-    height={600}
-    class="h-[250px] w-full rounded-lg object-cover"
-  />
-  <Image
-    src={img4}
-    alt=""
-    width={1200}
-    height={600}
-    class="h-[250px] w-full rounded-lg object-cover"
-  />
-  <Image
-    src={img5}
-    alt=""
-    width={1200}
-    height={600}
-    class="h-[250px] w-full rounded-lg object-cover"
-  />
-</div>
+<Gallery
+  images={[
+    {
+      src: img2,
+      alt: "My Warrior's Shield dashboard view"
+    },
+    {
+      src: img3,
+      alt: "My Warrior's Shield task list"
+    },
+    {
+      src: img4,
+      alt: "My Warrior's Shield encouragement page"
+    },
+    {
+      src: img5,
+      alt: "My Warrior's Shield potential features wireframe"
+    }
+  ]}
+/>
 
 
 ## Devpost

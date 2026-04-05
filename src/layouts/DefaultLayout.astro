@@ -5,6 +5,7 @@ import themeConfig from '@theme-config'
 import { SEO } from 'astro-seo'
 import Header from '@components/Header.astro'
 import Footer from '@components/Footer.astro'
+import GalleryLightbox from '@components/GalleryLightbox.astro'
 import { ClientRouter } from 'astro:transitions'
 import type { ImageMetadata } from 'astro'
 
@@ -124,6 +125,7 @@ const imageUrl = new URL(imagePath, Astro.site).href
       <slot />
     </main>
     <Footer />
+    <GalleryLightbox />
     <style lang="scss" is:global>
       @use '../assets/scss/base/mixins' as *;
 

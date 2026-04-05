@@ -10,9 +10,14 @@ heroBanner: '../../assets/images/projects/keywise-care/keywise-care-edit.webp'
 ---
 
 import BreakoutImage from '@components/BreakoutImage.astro'
+import Gallery from '@components/Gallery.astro'
 import { Image } from 'astro:assets'
 import banner from '../../assets/images/projects/keywise-care/keywise-care-edit.webp'
 import { YouTube } from '@astro-community/astro-embed-youtube';
+import img1 from '../../assets/images/projects/placeholders/project-image-1.png'
+import img2 from '../../assets/images/projects/placeholders/project-image-2.png'
+import img3 from '../../assets/images/projects/placeholders/project-image-3.png'
+import img4 from '../../assets/images/projects/placeholders/project-image-4.png'
 
 ## Project Overview
 
@@ -50,38 +55,16 @@ Another challenge was balancing speed with long-term usability. I focused on bui
 The website gives KeyWise Care a professional online presence that clearly communicates its value to overseas homeowners in Israel. It makes the service easier to understand, supports trust with prospective clients, and creates a strong foundation for future growth.
 
 The maintainable design means the client can update content without developer help, providing long-term value.
-{/*
+
 ## Project Gallery
 
-<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-  <Image
-    src="../../assets/images/projects/placeholders/project-image-1.png"
-    alt="KeyWise Care service packages and pricing"
-    width={1200}
-    height={600}
-    class="h-[250px] w-full rounded-lg object-cover"
-  />
-  <Image
-    src="../../assets/images/projects/placeholders/project-image-2.png"
-    alt="Property care services overview"
-    width={1200}
-    height={600}
-    class="h-[250px] w-full rounded-lg object-cover"
-  />
-  <Image
-    src="../../assets/images/projects/placeholders/project-image-3.png"
-    alt="FAQ section and trust-building content"
-    width={1200}
-    height={600}
-    class="h-[250px] w-full rounded-lg object-cover"
-  />
-  <Image
-    src="../../assets/images/projects/placeholders/project-image-4.png"
-    alt="Responsive mobile view of service tiers"
-    width={1200}
-    height={600}
-    class="h-[250px] w-full rounded-lg object-cover"
-  />
-</div>
+<Gallery 
+  images={[
+    { src: img1, alt: "KeyWise Care service packages and pricing" },
+    { src: img2, alt: "Property care services overview" },
+    { src: img3, alt: "FAQ section and trust-building content" },
+    { src: img4, alt: "Responsive mobile view of service tiers" }
+  ]} 
+/>
 
-<BreakoutImage src={banner} alt="KeyWise Care website hero" />*/}
+<BreakoutImage src={banner} alt="KeyWise Care website hero" />

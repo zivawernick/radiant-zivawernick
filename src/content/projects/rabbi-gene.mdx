@@ -14,6 +14,7 @@ heroBanner: '../../assets/images/projects/rabbi-gene/rabbi-gene-logo.webp'
 The website for Rabbi Gene Wernick serves as a digital home for his extensive body of work, including sermons, articles, and community initiatives. It was designed to reflect his warmth and intellectual depth while providing easy access to his teachings for a global audience.
 
 import BreakoutImage from '@components/BreakoutImage.astro'
+import Gallery from '@components/Gallery.astro'
 import { Image } from 'astro:assets'
 import banner from '../../assets/images/projects/rabbi-gene/rabbi-gene-hero.webp'
 import gallery1 from '../../assets/images/projects/rabbi-gene/rabbi-gene-hero-with-side-nav.webp'
@@ -37,33 +38,23 @@ THe biggest challange was creating a website that could effectively showcase Rab
 ## Project Gallery
 [Rabbi Gene Wernick Website](https://gene.rabbiwernick.com)
 
-<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-  <Image
-    src={gallery2}
-    alt="Rabbi Gene Wernick Website with side navigation"
-    width={1200}
-    height={600}
-    class="h-[250px] w-full rounded-lg object-cover"
-  />
-  <Image
-    src={gallery3}
-    alt="Rabbi Gene Wernick Website Gallery 2"
-    width={1200}
-    height={600}
-    class="h-[250px] w-full rounded-lg object-cover"
-  />
-  <Image
-    src={gallery4}
-    alt="Rabbi Gene Wernick Website Gallery 3"
-    width={1200}
-    height={600}
-    class="h-[250px] w-full rounded-lg object-cover"
-  />
-  <Image
-    src={gallery5}
-    alt="Rabbi Gene Wernick Website Gallery 4"
-    width={1200}
-    height={600}
-    class="h-[250px] w-full rounded-lg object-cover"
-  />
-</div>
+<Gallery
+  images={[
+    {
+      src: gallery2,
+      alt: "Rabbi Gene Wernick Website publications section"
+    },
+    {
+      src: gallery3,
+      alt: "Rabbi Gene Wernick Website dark theme view"
+    },
+    {
+      src: gallery4,
+      alt: "Rabbi Gene Wernick Website antisemitism tribe chapters"
+    },
+    {
+      src: gallery5,
+      alt: "Rabbi Gene Wernick Website antisemitism preface"
+    }
+  ]}
+/>

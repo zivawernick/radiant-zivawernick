@@ -15,6 +15,7 @@ CALMe is a team-built hackathon project from Code for Resilience, providing imme
 
 import BlockQuote from '@components/BlockQuote.astro'
 import BreakoutImage from '@components/BreakoutImage.astro'
+import Gallery from '@components/Gallery.astro'
 import { Image } from 'astro:assets'
 import banner from '../../assets/images/projects/placeholders/project-image-1.png'
 import img1 from '../../assets/images/projects/placeholders/project-image-2.png'
@@ -55,36 +56,14 @@ CALMe empowers civilians with immediate, evidence-based tools to mitigate PTSD r
 
 ## Project Gallery
 
-<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-  <Image
-    src={img1}
-    alt="CALMe gallery placeholder 1"
-    width={1200}
-    height={600}
-    class="h-[250px] w-full rounded-lg object-cover"
-  />
-  <Image
-    src={img2}
-    alt="CALMe gallery placeholder 2"
-    width={1200}
-    height={600}
-    class="h-[250px] w-full rounded-lg object-cover"
-  />
-  <Image
-    src={img3}
-    alt="CALMe gallery placeholder 3"
-    width={1200}
-    height={600}
-    class="h-[250px] w-full rounded-lg object-cover"
-  />
-  <Image
-    src={img4}
-    alt="CALMe gallery placeholder 4"
-    width={1200}
-    height={600}
-    class="h-[250px] w-full rounded-lg object-cover"
-  />
-</div>
+<Gallery 
+  images={[
+    { src: img1, alt: "CALMe gallery placeholder 1" },
+    { src: img2, alt: "CALMe gallery placeholder 2" },
+    { src: img3, alt: "CALMe gallery placeholder 3" },
+    { src: img4, alt: "CALMe gallery placeholder 4" }
+  ]} 
+/>
 
 ## Repo
 

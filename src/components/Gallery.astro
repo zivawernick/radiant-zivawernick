@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets'
+
+/**
+ * Gallery Component
+ * 
+ * @description A responsive grid gallery that allows clicking images to view them in a full-screen lightbox.
+ */
+interface GalleryImage {
+  src: any
+  alt: string
+}
+
+interface Props {
+  /**
+   * An array of image objects to display in the gallery
+   */
+  images: GalleryImage[]
+  /**
+   * Optional grid columns for desktop
+   * @default 2
+   */
+  columns?: number
+  /**
+   * Optional class for the container
+   */
+  class?: string
+}
+
+const { images, columns = 2, class: className } = Astro.props
+---
+
+<div class:list={['grid grid-cols-1 gap-4 gallery-container', `md:grid-cols-${columns}`, className]}>
+  {
+    images.map((img, index) => (
+      <button 
+        class="gallery-item cursor-zoom-in overflow-hidden rounded-lg border-none p-0 transition-all hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+        aria-label={`View image ${index + 1}: ${img.alt} in full screen`}
+        data-image-src={typeof img.src === 'string' ? img.src : img.src.src}
+        data-image-alt={img.alt}
+      >
+        <Image
+          src={img.src}
+          alt={img.alt}
+          width={1200}
+          height={600}
+          class="h-[250px] w-full object-cover"
+        />
+      </button>
+    ))
+  }
+</div>

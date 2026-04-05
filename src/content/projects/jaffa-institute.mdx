@@ -14,6 +14,7 @@ heroBanner: '../../assets/images/projects/jaffa-institute/jaffa-institute-banner
 At The Jaffa Institute, a non-profit combating poverty since 1982, I serve as Data Manager handling donor data, financial operations, website maintenance, and campaign execution. My work supports 40 programs aiding vulnerable populations in Tel Aviv-Jaffa with precise reporting and digital infrastructure.
 
 import BreakoutImage from '@components/BreakoutImage.astro'
+import Gallery from '@components/Gallery.astro'
 import { Image } from 'astro:assets'
 import banner from '../../assets/images/projects/jaffa-institute/jaffa-institute-banner.webp'
 import img1 from '../../assets/images/projects/jaffa-institute/jaffa-institute-2021a.webp'
@@ -40,46 +41,21 @@ The website also includees custom-built backend functionality from all forms to 
 ## Project Gallery
 
 From This:
-<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-  <Image
-    src={img1}
-    alt="Old Jaffa Institute website from 2021"
-    width={1200}
-    height={600}
-    class="h-[250px] w-full rounded-lg object-cover"
-  />
-  <Image
-    src={img2}
-    alt="Partial Program overview of old Jaffa Institute site from 2021"
-    width={1200}
-    height={600}
-    class="h-[250px] w-full rounded-lg object-cover"
-  />
-  </div>
+<Gallery 
+  images={[
+    { src: img1, alt: "Old Jaffa Institute website from 2021" },
+    { src: img2, alt: "Partial Program overview of old Jaffa Institute site from 2021" }
+  ]} 
+/>
+
  To this in 2026:
- <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-  <Image
-    src={img3}
-    alt="Current Jaffa Institute Home Page - Hero"
-    width={1200}
-    height={600}
-    class="h-[250px] w-full rounded-lg object-cover"
-  />
-  <Image
-    src={img4}
-    alt="Jaffa Institute Programt page - first section view of Map of Jaffa with program locations, and links for the 2025/2026 Project book and Work Plan for 2026"
-    width={1200}
-    height={600}
-    class="h-[250px] w-full rounded-lg object-cover"
-  />
-    <Image
-    src={img5}
-    alt="Jaffa Institute Program page - second section view of after school Enrichment centers, nutritional security programs and Programs for Elderly and Holocaust Survivors"
-    width={1200}
-    height={600}
-    class="h-[250px] w-full rounded-lg object-cover"
-  />
-</div>
+<Gallery 
+  images={[
+    { src: img3, alt: "Current Jaffa Institute Home Page - Hero" },
+    { src: img4, alt: "Jaffa Institute Programt page - first section view of Map of Jaffa with program locations, and links for the 2025/2026 Project book and Work Plan for 2026" },
+    { src: img5, alt: "Jaffa Institute Program page - second section view of after school Enrichment centers, nutritional security programs and Programs for Elderly and Holocaust Survivors" }
+  ]} 
+/>
 
 ## Impact
 
