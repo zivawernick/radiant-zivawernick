@@ -8,7 +8,7 @@ import type { CollectionEntry } from 'astro:content'
 import { slugify } from '@utils/slugify'
 
 // Import fallback image directly for optimization
-import fallbackImage from '@assets/images/projects/project-image-1.png'
+import fallbackImage from '@assets/images/projects/placeholders/project-image-1.png'
 
 export const getStaticPaths = (async ({ paginate }) => {
   const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order)

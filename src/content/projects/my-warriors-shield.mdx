@@ -1,0 +1,94 @@
+---
+title: My Warrior's Shield
+author: Ziva Wernick
+role: Front-end Developer
+description: My Warrior's Shield is a supportive platform providing resources and community for veterans transitioning to civilian life. It offers mental health tools, career guidance, and a secure space for sharing experiences.
+tags: ['Breast Cancer Support', 'Community', 'Web Development', 'Resource Hub','Hackathon', 'Girls in Tech', 'Health Tech', 'Wix', 'Team Project']
+order: 5
+thumbnail: '../../assets/images/projects/my-warriors-shield/my-warriors-shield.webp'
+heroBanner: '../../assets/images/projects/my-warriors-shield/my-warriors-shield-wide.webp'
+---
+
+import BlockQuote from '@components/BlockQuote.astro'
+import BreakoutImage from '@components/BreakoutImage.astro'
+import { Image } from 'astro:assets'
+import banner from '../../assets/images/projects/my-warriors-shield/my-warriors-shield-home.webp'
+import img1 from '../../assets/images/projects/my-warriors-shield/my-warriors-shield-wireframe.webp'
+import img2 from '../../assets/images/projects/my-warriors-shield/my-warriors-shield-2.webp'
+import img3 from '../../assets/images/projects/my-warriors-shield/my-warriors-shield-3.webp'
+import img4 from '../../assets/images/projects/my-warriors-shield/my-warriors-shield-4.webp'
+import img5 from '../../assets/images/projects/my-warriors-shield/my-warriors-shield-potential.webp'
+
+## Project Overview
+
+My Warrior’s Shield is a team-built hackathon project designed to help supporters of someone going through breast cancer feel more empowered and less helpless. The MVP focused specifically on users ages 13 to 18, giving younger family members practical ways to support their warrior through tasks, mood check-ins, and curated encouragement.
+
+<BreakoutImage src={banner} />
+
+## My Role
+
+Our team met regularly to shape the concept, define the user experience, and adapt quickly when the original technical plan changed. I helped with product thinking, planning the site structure, and building the application in Wix with the rest of the team.
+
+I worked on the website structure, member-facing pages, core navigation, and the connection between user input and stored profile data. I also helped connect dashboard logic so users could view and interact with personalized information through Wix data tools and APIs.
+
+## How It Works
+
+Users can sign up with Google, Facebook, or email, then create a simple profile for themselves and their warrior. After logging in, they are taken to a personalized dashboard built with Wix Data Collections and Member Pages.
+
+The dashboard includes curated suggestions for things to do and things to say, a personal task list, and a daily check-in where users can rate how they and their warrior are doing on a 1 to 5 scale. It also includes educational lightboxes with breast cancer facts, self-care guidance, supportive language suggestions, and links to outside resources.
+
+## Technical Challenges
+
+One of the biggest challenges was having to scrap the original independent development plan after a last-minute staffing change. To keep the project moving, the team pivoted to Wix and used its built-in tools, JavaScript editor, data collections, and Corvid APIs to deliver a functional prototype.
+
+That pivot meant rethinking scope, privacy, and liability. Because the app involved sensitive personal information and emotional support content, we had to narrow the MVP carefully and avoid features that could be interpreted as emergency or medical advice.
+
+## Tech Stack
+Wix, JavaScript, Corvid, Wix Data Collections, Wix Member Pages, Figma
+
+## Impact
+
+The project was built to help young caregivers feel informed, useful, and emotionally supported while helping a loved one through breast cancer. Instead of leaving users unsure of what to do, it gives them structured ways to show care, stay organized, and check in consistently.
+
+**Girls in Tech Virtual Hackathon: Fall 2020 Challenge submission.**
+
+
+## Project Gallery
+
+<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+  <Image
+    src={img2}
+    alt=""
+    width={1200}
+    height={600}
+    class="h-[250px] w-full rounded-lg object-cover"
+  />
+  <Image
+    src={img3}
+    alt=""
+    width={1200}
+    height={600}
+    class="h-[250px] w-full rounded-lg object-cover"
+  />
+  <Image
+    src={img4}
+    alt=""
+    width={1200}
+    height={600}
+    class="h-[250px] w-full rounded-lg object-cover"
+  />
+  <Image
+    src={img5}
+    alt=""
+    width={1200}
+    height={600}
+    class="h-[250px] w-full rounded-lg object-cover"
+  />
+</div>
+
+
+## Devpost
+
+[View Devpost Submission](https://devpost.com/software/how-can-i-help-btpn8v)
+
+{/*<BreakoutImage src="/projects/my-warriors-shield.png" />*/}
