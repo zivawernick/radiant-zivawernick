@@ -70,3 +70,6 @@ Current Status:
      Starter".
    - README.md: Still contains the original starter template documentation.
    - AGENTS.md: Still contains the original starter template metadata.
+
+   Additional plans
+   The shortlist for what claude suggested is intimidating and i just have no idea... i dont have a pricing range or anything and i dont have testimonials so its a bit strained for me. I also need to fix some of the pictures too, for CAlMe, my grandfathers project details page . I need more pictures for homegrown and for keywise care too. But most of the project pages need an adjustment in the main banner. I also need to run a check on all components i created ensuring for accessibility functioning- the template had a lot but i dont know if the changes i made effected things. I dont like how the tags section is listed. And maybe the projects should have a drop down menu. Clicking brings you to the features but you can also select the names of the projects...
