@@ -17,14 +17,17 @@ import BlockQuote from '@components/BlockQuote.astro'
 import BreakoutImage from '@components/BreakoutImage.astro'
 import Gallery from '@components/Gallery.astro'
 import { Image } from 'astro:assets'
-import banner from '../../assets/images/projects/placeholders/project-image-1.png'
-import img1 from '../../assets/images/projects/placeholders/project-image-2.png'
-import img2 from '../../assets/images/projects/placeholders/project-image-3.png'
-import img3 from '../../assets/images/projects/placeholders/project-image-4.png'
-import img4 from '../../assets/images/projects/placeholders/project-image-5.png'
+
+import banner from '../../assets/images/projects/calme/calme-logo-transparent.webp'
+import img1 from '../../assets/images/projects/calme/calme-alone.webp'
+import img2 from '../../assets/images/projects/calme/calme-game.webp'
+import img3 from '../../assets/images/projects/calme/calme-settings.webp'
+
+{/*import { Video } from 'astro:assets'*/}
+{/*import vid4 from '../../assets/images/projects/calme/calme-scale.mp4'*/}
 
 
-{/*<BreakoutImage src={banner} alt="CALMe logo" />*/}
+<BreakoutImage src={img1} alt="CALMe - You are not alone" /> 
 
 ## My Role
 
@@ -58,12 +61,11 @@ CALMe empowers civilians with immediate, evidence-based tools to mitigate PTSD r
 
 <Gallery 
   images={[
-    { src: img1, alt: "CALMe gallery placeholder 1" },
-    { src: img2, alt: "CALMe gallery placeholder 2" },
-    { src: img3, alt: "CALMe gallery placeholder 3" },
-    { src: img4, alt: "CALMe gallery placeholder 4" }
+    { src: img2, alt: "CALMe Matching Game - 4x3 Card Board" },
+    { src: img3, alt: "CALMe - Settings in Dark Mode" },
   ]} 
 />
+{/*<Video src={vid4} alt="CALMe gallery placeholder 4" />*/}
 
 ## Repo
 
