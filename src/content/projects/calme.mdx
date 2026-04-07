@@ -22,12 +22,10 @@ import banner from '../../assets/images/projects/calme/calme-logo-transparent.we
 import img1 from '../../assets/images/projects/calme/calme-alone.webp'
 import img2 from '../../assets/images/projects/calme/calme-game.webp'
 import img3 from '../../assets/images/projects/calme/calme-settings.webp'
-
-{/*import { Video } from 'astro:assets'*/}
-{/*import vid4 from '../../assets/images/projects/calme/calme-scale.mp4'*/}
+import vid4 from '../../assets/images/projects/calme/calme-scale.mp4'
 
 
-<BreakoutImage src={img1} alt="CALMe - You are not alone" /> 
+<BreakoutImage src={img1} alt="CALMe - You are not alone" maxHeight="34rem" fit="contain" /> 
 
 ## My Role
 
@@ -60,12 +58,21 @@ CALMe empowers civilians with immediate, evidence-based tools to mitigate PTSD r
 ## Project Gallery
 
 <Gallery 
-  images={[
+  items={[
     { src: img2, alt: "CALMe Matching Game - 4x3 Card Board" },
-    { src: img3, alt: "CALMe - Settings in Dark Mode" },
+    {
+      src: img3,
+      alt: "CALMe - Settings in Dark Mode",
+      previewHeight: "22rem",
+    },
+    {
+      src: vid4,
+      alt: "CALMe emotion scale interaction demo",
+      type: "video",
+      previewHeight: "22rem",
+    },
   ]} 
 />
-{/*<Video src={vid4} alt="CALMe gallery placeholder 4" />*/}
 
 ## Repo
 
