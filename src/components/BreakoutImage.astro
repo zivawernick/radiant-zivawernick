@@ -11,6 +11,15 @@ type Props = {
    * The image source
    */
   src: string | ImageMetadata
+  /**
+   * Optional max height used to keep especially tall or dominant images in balance.
+   */
+  maxHeight?: string
+  /**
+   * Controls how the image fits when a max height is applied.
+   * @default 'cover'
+   */
+  fit?: 'cover' | 'contain'
 } &
   /**
    * Alt text describing the image for screen readers.
@@ -33,9 +42,10 @@ type Props = {
    */
   ({ alt: string; decorative?: never } | { alt?: never; decorative: true })
 
-const { src, decorative = false, alt = '' } = Astro.props
+const { src, decorative = false, alt = '', maxHeight, fit = 'cover' } = Astro.props
 
 const altText = decorative ? '' : alt
+const fitClass = fit === 'contain' ? 'object-contain' : 'object-cover'
 ---
 
 <div class="relative -mx-4 my-8 md:-mx-8 lg:-mx-[120px]">
@@ -44,7 +54,8 @@ const altText = decorative ? '' : alt
     alt={altText}
     width={1400}
     height={700}
-    class="h-auto w-full rounded-lg object-cover"
+    class:list={['h-auto w-full rounded-lg', fitClass, maxHeight && 'max-h-[var(--breakout-max-height)]']}
+    style={maxHeight ? `--breakout-max-height:${maxHeight};` : undefined}
     loading="lazy"
   />
   <div class="absolute inset-0 rounded-lg shadow-inner"></div>

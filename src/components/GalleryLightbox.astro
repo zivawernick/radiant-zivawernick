@@ -6,7 +6,7 @@
       </button>
     </form>
     
-    <button class="nav-button prev" aria-label="Previous image" id="lightbox-prev">
+    <button class="nav-button prev" aria-label="Previous gallery item" id="lightbox-prev">
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
     </button>
 
@@ -14,6 +14,9 @@
       <div class="image-container">
         <div class="loader"></div>
         <img id="lightbox-image" src="" alt="" />
+        <video id="lightbox-video" controls playsinline preload="metadata" hidden>
+          <source id="lightbox-video-source" src="" type="video/mp4" />
+        </video>
       </div>
       <div class="lightbox-info">
         <p id="lightbox-caption"></p>
@@ -21,7 +24,7 @@
       </div>
     </div>
 
-    <button class="nav-button next" aria-label="Next image" id="lightbox-next">
+    <button class="nav-button next" aria-label="Next gallery item" id="lightbox-next">
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
     </button>
   </div>
@@ -30,56 +33,126 @@
 <script>
   let currentIndex = 0
   let currentGalleryButtons: Element[] = []
+  let currentMediaType = 'image'
+  let touchStartX = 0
 
-  const setupGallery = () => {
-    const dialog = document.getElementById('gallery-lightbox') as HTMLDialogElement
-    const lightboxImg = document.getElementById('lightbox-image') as HTMLImageElement
+  const getElements = () => {
+    const dialog = document.getElementById('gallery-lightbox') as HTMLDialogElement | null
+    const lightboxImg = document.getElementById('lightbox-image') as HTMLImageElement | null
+    const lightboxVideo = document.getElementById('lightbox-video') as HTMLVideoElement | null
+    const lightboxVideoSource = document.getElementById('lightbox-video-source') as HTMLSourceElement | null
     const lightboxCaption = document.getElementById('lightbox-caption')
     const lightboxCounter = document.getElementById('lightbox-counter')
-    const buttons = document.querySelectorAll('.gallery-item')
     const prevBtn = document.getElementById('lightbox-prev')
     const nextBtn = document.getElementById('lightbox-next')
     const loader = document.querySelector('.loader')
 
-    if (!dialog || !lightboxImg || !lightboxCaption || !prevBtn || !nextBtn || !lightboxCounter) return
+    return {
+      dialog,
+      lightboxImg,
+      lightboxVideo,
+      lightboxVideoSource,
+      lightboxCaption,
+      lightboxCounter,
+      prevBtn,
+      nextBtn,
+      loader,
+    }
+  }
 
-    const updateLightbox = (index: number) => {
-      const button = currentGalleryButtons[index]
-      if (!button) return
+  const stopVideoPlayback = () => {
+    const { lightboxVideo, lightboxVideoSource } = getElements()
+    if (!lightboxVideo || !lightboxVideoSource) return
 
-      const src = button.getAttribute('data-image-src')
-      const alt = button.getAttribute('data-image-alt')
-      
-      if (src) {
-        if (loader) loader.classList.add('visible')
-        lightboxImg.style.opacity = '0'
-        
-        lightboxImg.src = src
-        lightboxImg.alt = alt || ''
-        if (lightboxCaption) lightboxCaption.textContent = alt || ''
-        if (lightboxCounter) lightboxCounter.textContent = `${index + 1} / ${currentGalleryButtons.length}`
-        currentIndex = index
-      }
+    lightboxVideo.pause()
+    lightboxVideo.removeAttribute('poster')
+    lightboxVideoSource.src = ''
+    lightboxVideo.load()
+  }
+
+  const updateLightbox = (index: number) => {
+    const button = currentGalleryButtons[index] as HTMLElement | undefined
+    const {
+      lightboxImg,
+      lightboxVideo,
+      lightboxVideoSource,
+      lightboxCaption,
+      lightboxCounter,
+      loader,
+    } = getElements()
+
+    if (!button || !lightboxImg || !lightboxVideo || !lightboxVideoSource || !lightboxCaption || !lightboxCounter) return
+
+    const mediaType = button.dataset.mediaType ?? 'image'
+    const src = button.dataset.mediaSrc
+    const alt = button.dataset.mediaAlt ?? ''
+    const poster = button.dataset.mediaPoster
+    const lightboxFit = button.dataset.lightboxFit ?? 'contain'
+    const lightboxPosition = button.dataset.lightboxPosition ?? 'center center'
+
+    if (!src) return
+
+    currentMediaType = mediaType
+
+    if (loader) loader.classList.toggle('visible', mediaType === 'image')
+
+    lightboxCaption.textContent = alt
+    lightboxCounter.textContent = `${index + 1} / ${currentGalleryButtons.length}`
+    currentIndex = index
+
+    lightboxImg.style.objectFit = lightboxFit
+    lightboxImg.style.objectPosition = lightboxPosition
+    lightboxVideo.style.objectFit = lightboxFit
+    lightboxVideo.style.objectPosition = lightboxPosition
+
+    if (mediaType === 'video') {
+      lightboxImg.hidden = true
+      lightboxImg.style.opacity = '0'
+      lightboxImg.removeAttribute('src')
+
+      lightboxVideo.hidden = false
+      if (poster) lightboxVideo.poster = poster
+      // Change the source type here when extending lightbox video support beyond MP4.
+      lightboxVideoSource.src = src
+      lightboxVideo.load()
+
+      if (loader) loader.classList.remove('visible')
+      void lightboxVideo.play().catch(() => {
+        // Autoplay can be blocked by browser policy; controls remain available.
+      })
+      return
     }
 
+    stopVideoPlayback()
+    lightboxVideo.hidden = true
+    lightboxImg.hidden = false
+    lightboxImg.style.opacity = '0'
+    lightboxImg.src = src
+    lightboxImg.alt = alt
+  }
+
+  const showNext = () => {
+    if (currentGalleryButtons.length <= 1) return
+    updateLightbox((currentIndex + 1) % currentGalleryButtons.length)
+  }
+
+  const showPrev = () => {
+    if (currentGalleryButtons.length <= 1) return
+    updateLightbox((currentIndex - 1 + currentGalleryButtons.length) % currentGalleryButtons.length)
+  }
+
+  const setupGallery = () => {
+    const { dialog, lightboxImg, prevBtn, nextBtn } = getElements()
+    const buttons = document.querySelectorAll('.gallery-item')
+
+    if (!dialog || !lightboxImg || !prevBtn || !nextBtn) return
+
     lightboxImg.onload = () => {
+      const { loader } = getElements()
       if (loader) loader.classList.remove('visible')
       lightboxImg.style.opacity = '1'
     }
 
-    const showNext = () => {
-      if (currentGalleryButtons.length <= 1) return
-      const nextIndex = (currentIndex + 1) % currentGalleryButtons.length
-      updateLightbox(nextIndex)
-    }
-
-    const showPrev = () => {
-      if (currentGalleryButtons.length <= 1) return
-      const prevIndex = (currentIndex - 1 + currentGalleryButtons.length) % currentGalleryButtons.length
-      updateLightbox(prevIndex)
-    }
-
-    // Use event delegation or re-attach to fresh buttons
     buttons.forEach(button => {
       button.onclick = () => {
         const container = button.closest('.gallery-container')
@@ -99,6 +172,8 @@
     prevBtn.onclick = (e) => { e.stopPropagation(); showPrev() }
 
     dialog.onclose = () => {
+      currentMediaType = 'image'
+      stopVideoPlayback()
       document.body.style.overflow = ''
     }
 
@@ -112,23 +187,22 @@
         const activeDialog = document.getElementById('gallery-lightbox') as HTMLDialogElement
         if (!activeDialog || !activeDialog.open) return
 
+        if (currentMediaType === 'video' && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) return
         if (e.key === 'ArrowRight') showNext()
         if (e.key === 'ArrowLeft') showPrev()
         if (e.key === 'Escape') activeDialog.close()
       })
       
       // Touch support
-      let touchStartX = 0
-      let touchEndX = 0
-      
       window.addEventListener('touchstart', (e) => {
         touchStartX = e.changedTouches[0].screenX
       }, { passive: true })
       
       window.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX
+        const touchEndX = e.changedTouches[0].screenX
         const activeDialog = document.getElementById('gallery-lightbox') as HTMLDialogElement
         if (!activeDialog || !activeDialog.open) return
+        if (currentMediaType === 'video') return
         
         if (touchStartX - touchEndX > 50) showNext()
         if (touchEndX - touchStartX > 50) showPrev()
@@ -236,7 +310,7 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 100%;
+        height: min(75vh, calc(100vh - 12rem));
         overflow: hidden;
       }
 
@@ -258,12 +332,29 @@
       }
 
       img {
-        max-width: 100%;
-        max-height: 75vh;
+        display: block;
+        width: 100%;
+        height: 100%;
         object-fit: contain;
+        object-position: center center;
         border-radius: 4px;
         box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         transition: opacity 0.3s ease;
+      }
+
+      video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center center;
+        border-radius: 4px;
+        background: black;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      }
+
+      [hidden] {
+        display: none !important;
       }
 
       .lightbox-info {

@@ -4,18 +4,30 @@ import { Image } from 'astro:assets'
 /**
  * Gallery Component
  * 
- * @description A responsive grid gallery that allows clicking images to view them in a full-screen lightbox.
+ * @description A responsive grid gallery that allows clicking media to view it in a full-screen lightbox.
  */
-interface GalleryImage {
-  src: any
+type GalleryItem = {
+  src: string | ImageMetadata
   alt: string
+  type?: 'image' | 'video'
+  /**
+   * Video items are currently rendered as MP4 sources.
+   * Add a media MIME/type field here if you want the gallery to support other formats like WebM or MOV.
+   */
+  previewHeight?: string
+  previewFit?: 'cover' | 'contain'
+  lightboxFit?: 'cover' | 'contain'
+  lightboxPosition?: string
+  poster?: string | ImageMetadata
 }
 
 interface Props {
   /**
-   * An array of image objects to display in the gallery
+   * An array of media objects to display in the gallery.
+   * `items` is the preferred prop name; `images` is kept for backward compatibility.
    */
-  images: GalleryImage[]
+  items?: GalleryItem[]
+  images?: GalleryItem[]
   /**
    * Optional grid columns for desktop
    * @default 2
@@ -27,26 +39,62 @@ interface Props {
   class?: string
 }
 
-const { images, columns = 2, class: className } = Astro.props
+const { items, images, columns = 2, class: className } = Astro.props
+const galleryItems = items ?? images ?? []
 ---
 
 <div class:list={['grid grid-cols-1 gap-4 gallery-container', `md:grid-cols-${columns}`, className]}>
   {
-    images.map((img, index) => (
+    galleryItems.map((item, index) => {
+      const mediaType = item.type ?? 'image'
+      const mediaSrc = typeof item.src === 'string' ? item.src : item.src.src
+      const posterSrc = item.poster ? (typeof item.poster === 'string' ? item.poster : item.poster.src) : undefined
+      const fitClass = item.previewFit === 'contain' ? 'object-contain' : 'object-cover'
+      const previewStyle = item.previewHeight ? `--gallery-item-height:${item.previewHeight};` : undefined
+
+      return (
       <button 
-        class="gallery-item cursor-zoom-in overflow-hidden rounded-lg border-none p-0 transition-all hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-        aria-label={`View image ${index + 1}: ${img.alt} in full screen`}
-        data-image-src={typeof img.src === 'string' ? img.src : img.src.src}
-        data-image-alt={img.alt}
+        class="gallery-item group relative cursor-zoom-in overflow-hidden rounded-lg border-none bg-slate-950 p-0 transition-all hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+        aria-label={`View ${mediaType} ${index + 1}: ${item.alt} in full screen`}
+        data-media-type={mediaType}
+        data-media-src={mediaSrc}
+        data-media-alt={item.alt}
+        data-media-poster={posterSrc}
+        data-lightbox-fit={item.lightboxFit ?? 'contain'}
+        data-lightbox-position={item.lightboxPosition ?? 'center center'}
+        style={previewStyle}
       >
-        <Image
-          src={img.src}
-          alt={img.alt}
-          width={1200}
-          height={600}
-          class="h-[250px] w-full object-cover"
-        />
+        {
+          mediaType === 'video' ? (
+            <>
+              <video
+                class:list={['h-[var(--gallery-item-height,250px)] w-full', fitClass]}
+                poster={posterSrc}
+                muted
+                playsinline
+                preload="metadata"
+                aria-hidden="true"
+              >
+                {/* Change the source type here when extending gallery video support beyond MP4. */}
+                <source src={mediaSrc} type="video/mp4" />
+              </video>
+              <span class="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/20 transition-colors group-hover:bg-black/30">
+                <span class="rounded-full bg-black/65 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
+                  Play video
+                </span>
+              </span>
+            </>
+          ) : (
+            <Image
+              src={item.src}
+              alt={item.alt}
+              width={1200}
+              height={600}
+              class:list={['h-[var(--gallery-item-height,250px)] w-full', fitClass]}
+            />
+          )
+        }
       </button>
-    ))
+    )})
   }
 </div>
