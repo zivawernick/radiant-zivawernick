@@ -1,7 +1,7 @@
 {
   "name": "ziva-wernick-portfolio",
   "description": "Personal website and portfolio of Ziva Wernick, built with accessibility and performance in mind.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Ziva Wernick",
   "license": "MIT",
   "type": "module",
@@ -31,31 +31,34 @@
     "url": "https://github.com/zivawernick/radiant-zivawernick/issues"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^4.3.13",
-    "@astrojs/partytown": "^2.1.4",
+    "@astrojs/mdx": "^5.0.3",
+    "@astrojs/partytown": "^2.1.6",
     "@iconify-json/logos": "^1.2.10",
-    "@iconify-json/lucide": "^1.2.96",
+    "@iconify-json/lucide": "^1.2.100",
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/simple-icons": "^1.2.74",
     "@types/sanitize-html": "^2.16.1",
-    "astro": "^5.18.0",
-    "astro-compress": "^2.3.9",
+    "astro": "^6.1.5",
+    "astro-compress": "^2.4.0",
     "astro-icon": "^1.1.5",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-css-order": "^2.2.0",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "sanitize-html": "^2.17.1",
-    "sass": "^1.97.3",
+    "sanitize-html": "^2.17.2",
+    "sass": "^1.98.0",
     "svgo": "^4.0.1",
-    "tailwindcss": "^4.2.1"
+    "tailwindcss": "^4.2.2"
   },
   "dependencies": {
     "@astro-community/astro-embed-youtube": "^0.5.10",
-    "@astrojs/sitemap": "^3.7.0",
-    "@tailwindcss/vite": "^4.2.1",
+    "@astrojs/sitemap": "^3.7.2",
+    "@tailwindcss/vite": "^4.2.2",
     "accessible-astro-components": "^5.2.0",
     "accessible-astro-launcher": "^2.0.0",
     "astro-seo": "^1.1.0"
+  },
+  "engines": {
+    "node": ">=22.12.0"
   }
 }
