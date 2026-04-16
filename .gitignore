@@ -31,3 +31,9 @@ package-lock.json
 
 # cursor
 .cursor
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
