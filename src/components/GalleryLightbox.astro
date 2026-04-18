@@ -154,8 +154,8 @@
       lightboxImg.style.opacity = '1'
     }
 
-    buttons.forEach(button => {
-      button.onclick = () => {
+    (buttons as NodeListOf<HTMLElement>).forEach(button => {
+         button.onclick = () => {
         const container = button.closest('.gallery-container')
         if (!container) return
         
@@ -171,12 +171,10 @@
         }
         document.body.style.overflow = 'hidden'
       }
-    })
-
+    });
     // Assign click handlers directly to avoid duplicate listeners on persistent elements
-    nextBtn.onclick = (e) => { e.stopPropagation(); showNext() }
-    prevBtn.onclick = (e) => { e.stopPropagation(); showPrev() }
-
+   (nextBtn as HTMLButtonElement).onclick = (e) => { e.stopPropagation(); showNext()  };
+   (prevBtn as HTMLButtonElement).onclick = (e) => { e.stopPropagation(); showPrev() };
     dialog.onclose = () => {
       currentMediaType = 'image'
       stopVideoPlayback()
