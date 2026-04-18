@@ -14,7 +14,7 @@
       <div class="image-container">
         <div class="loader"></div>
         <img id="lightbox-image" src="" alt="" />
-        <video id="lightbox-video" controls playsinline preload="metadata" hidden>
+        <video id="lightbox-video" controls playsinline preload="metadata" hidden aria-label="Gallery video player">
           <source id="lightbox-video-source" src="" type="video/mp4" />
         </video>
       </div>
@@ -33,6 +33,7 @@
 <script>
   let currentIndex = 0
   let currentGalleryButtons: Element[] = []
+  let lastFocusedElement: HTMLElement | null = null
   let currentMediaType = 'image'
   let touchStartX = 0
 
@@ -153,28 +154,35 @@
       lightboxImg.style.opacity = '1'
     }
 
-    buttons.forEach(button => {
-      button.onclick = () => {
+    (buttons as NodeListOf<HTMLElement>).forEach(button => {
+         button.onclick = () => {
         const container = button.closest('.gallery-container')
         if (!container) return
         
+        lastFocusedElement = button as HTMLElement
         currentGalleryButtons = Array.from(container.querySelectorAll('.gallery-item'))
         const index = currentGalleryButtons.indexOf(button)
         
         updateLightbox(index)
         dialog.showModal()
+        const closeBtn = dialog.querySelector('.close-button') as HTMLButtonElement | null
+        if (closeBtn) {
+          setTimeout(() => closeBtn.focus(), 0)
+        }
         document.body.style.overflow = 'hidden'
       }
-    })
-
+    });
     // Assign click handlers directly to avoid duplicate listeners on persistent elements
-    nextBtn.onclick = (e) => { e.stopPropagation(); showNext() }
-    prevBtn.onclick = (e) => { e.stopPropagation(); showPrev() }
-
+   (nextBtn as HTMLButtonElement).onclick = (e) => { e.stopPropagation(); showNext()  };
+   (prevBtn as HTMLButtonElement).onclick = (e) => { e.stopPropagation(); showPrev() };
     dialog.onclose = () => {
       currentMediaType = 'image'
       stopVideoPlayback()
-      document.body.style.overflow = ''
+      document.body.style.overflow = 'auto'
+      if (lastFocusedElement) {
+        lastFocusedElement.focus()
+        lastFocusedElement = null
+      }
     }
 
     dialog.onclick = (e) => {
