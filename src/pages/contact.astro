@@ -46,8 +46,12 @@ import { Icon } from 'astro-icon/components'
             <Checkbox name="keyboard-nav" value="keyboard" label="Keyboard navigation" />
           </Fieldset>-->
 
-          <Button htmlType="submit" type="primary">Send Message</Button>
+          <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+           <div class="h-captcha" data-captcha="true"></div>
+            <Button htmlType="submit" type="primary">Send Message</Button>
+          </div>
         </Form>
+      <script src="https://web3forms.com/client/script.js" async defer></script>
       </div>
       <div class="space-content">
         <Heading level="h3">Contact us</Heading>
