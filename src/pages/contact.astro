@@ -15,7 +15,8 @@ import { Icon } from 'astro-icon/components'
   <section class="container">
     <div class="grid grid-cols-1 gap-32 md:grid-cols-2">
       <div class="space-content">
-        <Form name="contact" action="/thank-you" method="post">
+        <Form name="contact" action="https://api.web3forms.com/submit" method="post">
+         <input type="hidden" name="access_key" value="e7696e12-3418-4990-b7e1-89a62e4bca25">
           <!-- Input field with custom validation message -->
           <Input
             name="firstname"
@@ -45,8 +46,12 @@ import { Icon } from 'astro-icon/components'
             <Checkbox name="keyboard-nav" value="keyboard" label="Keyboard navigation" />
           </Fieldset>-->
 
-          <Button htmlType="submit" type="primary">Send Message</Button>
+          <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+           <div class="h-captcha" data-captcha="true"></div>
+            <Button htmlType="submit" type="primary">Send Message</Button>
+          </div>
         </Form>
+      <script src="https://web3forms.com/client/script.js" async defer></script>
       </div>
       <div class="space-content">
         <Heading level="h3">Contact us</Heading>
