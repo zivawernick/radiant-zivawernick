@@ -17,7 +17,17 @@ import { Icon } from 'astro-icon/components'
       <div class="space-content">
         <Form name="contact" action="https://api.web3forms.com/submit" method="post">
          <input type="hidden" name="access_key" value="e7696e12-3418-4990-b7e1-89a62e4bca25">
-          <!-- Input field with custom validation message -->
+          <!-- Form errors -->
+          <div id="form-errors" 
+              role="alert" 
+              aria-live="polite" 
+              class="mb-4 p-4 rounded-lg border-2 border-transparent bg-white sr-only focus-within:not(:empty):not(.sr-only) border-error text-error"
+              tabindex="-1">
+              Please complete the captcha before submitting. 
+            <a href="#captcha-help" class="underline">Focus captcha</a>.
+          </div>
+         
+         <!-- Input field with custom validation message -->
           <Input
             name="firstname"
             label="First name"
