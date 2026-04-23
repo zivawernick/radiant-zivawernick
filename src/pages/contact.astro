@@ -17,7 +17,9 @@ import { Icon } from 'astro-icon/components'
       <div class="space-content">
         <Form name="contact" action="https://api.web3forms.com/submit" method="post">
          <input type="hidden" name="access_key" value="e7696e12-3418-4990-b7e1-89a62e4bca25">
-          <!-- Input field with custom validation message -->
+         <input type="hidden" name="redirect" value="https://zivawernick.com/thank-you">
+         
+         <!-- Input field with custom validation message -->
           <Input
             name="firstname"
             label="First name"
@@ -52,6 +54,39 @@ import { Icon } from 'astro-icon/components'
           </div>
         </Form>
       <script src="https://web3forms.com/client/script.js" async defer></script>
+      <script>
+        function initCaptchaGuard() {
+          const form = document.querySelector('form.js-validate');
+          if (!form || form.dataset.captchaGuard === 'true') return;
+          form.dataset.captchaGuard = 'true';
+
+          const errorNotification = form.querySelector('.notification');
+          const errorNotificationContent = errorNotification?.querySelector('p');
+
+          // accessible-astro-components Form validates required fields then calls
+          // form.submit() directly — bypassing submit event listeners entirely.
+          // Override form.submit() on this instance so hCaptcha is checked first.
+          const nativeSubmit = HTMLFormElement.prototype.submit.bind(form);
+          form.submit = function () {
+            const hCaptcha = form.querySelector('textarea[name="h-captcha-response"]');
+
+            if (!hCaptcha || !hCaptcha.value) {
+              errorNotificationContent.textContent = 'Please complete the captcha before submitting.';
+              errorNotification.setAttribute('tabindex', '-1');
+              errorNotification.hidden = false;
+              errorNotification.focus();
+              errorNotification.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+              return;
+            }
+
+            nativeSubmit();
+          };
+        }
+
+        // DOMContentLoaded for hard navigations, astro:page-load for View Transitions
+        document.addEventListener('DOMContentLoaded', initCaptchaGuard);
+        document.addEventListener('astro:page-load', initCaptchaGuard);
+      </script>
       </div>
       <div class="space-content">
         <Heading level="h3">Contact us</Heading>
