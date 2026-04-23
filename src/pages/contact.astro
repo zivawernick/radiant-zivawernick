@@ -62,9 +62,9 @@ import { Icon } from 'astro-icon/components'
           </div>
         </Form>
       <script src="https://web3forms.com/client/script.js" async defer></script>
-      <script define:vars={{ formName: 'contact' }}>
+      <script>
         function initCaptchaGuard() {
-          const form = document.querySelector(`form[name="${formName}"]`);
+          const form = document.querySelector('form.js-validate');
           if (!form || form.dataset.captchaGuard === 'true') return;
           form.dataset.captchaGuard = 'true';
 
