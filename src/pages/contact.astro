@@ -63,8 +63,11 @@ import { Icon } from 'astro-icon/components'
         </Form>
       <script src="https://web3forms.com/client/script.js" async defer></script>
       <script define:vars={{ formName: 'contact' }}>
-        document.addEventListener('DOMContentLoaded', () => {
+        function initCaptchaGuard() {
           const form = document.querySelector(`form[name="${formName}"]`);
+          if (!form || form.dataset.captchaGuard === 'true') return;
+          form.dataset.captchaGuard = 'true';
+
           const errorRegion = document.getElementById('form-errors');
 
           // accessible-astro-components Form validates required fields then calls
@@ -83,7 +86,11 @@ import { Icon } from 'astro-icon/components'
 
             nativeSubmit();
           };
-        });
+        }
+
+        // DOMContentLoaded for hard navigations, astro:page-load for View Transitions
+        document.addEventListener('DOMContentLoaded', initCaptchaGuard);
+        document.addEventListener('astro:page-load', initCaptchaGuard);
       </script>
       </div>
       <div class="space-content">
