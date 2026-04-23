@@ -62,6 +62,29 @@ import { Icon } from 'astro-icon/components'
           </div>
         </Form>
       <script src="https://web3forms.com/client/script.js" async defer></script>
+      <script define:vars={{ formName: 'contact' }}>
+        document.addEventListener('DOMContentLoaded', () => {
+          const form = document.querySelector(`form[name="${formName}"]`);
+          const errorRegion = document.getElementById('form-errors');
+
+          // accessible-astro-components Form validates required fields then calls
+          // form.submit() directly — bypassing submit event listeners entirely.
+          // Override form.submit() on this instance so hCaptcha is checked first.
+          const nativeSubmit = HTMLFormElement.prototype.submit.bind(form);
+          form.submit = function () {
+            const hCaptcha = form.querySelector('textarea[name="h-captcha-response"]');
+
+            if (!hCaptcha || !hCaptcha.value) {
+              errorRegion.textContent = 'Please complete the captcha before submitting.';
+              errorRegion.classList.remove('sr-only', 'border-transparent');
+              errorRegion.focus();
+              return;
+            }
+
+            nativeSubmit();
+          };
+        });
+      </script>
       </div>
       <div class="space-content">
         <Heading level="h3">Contact us</Heading>
