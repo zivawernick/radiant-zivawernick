@@ -31,7 +31,7 @@ import { Icon } from 'astro-icon/components'
           <Input name="email" label="Email address" type="email" required autocomplete="email" />
 
           <!-- Custom validation with pattern -->
-          <Input name="phone" label="Phone number" type="tel" required data-validation-pattern="^[0-9]{10}$" />
+          <Input name="phone" label="Phone number" type="tel"data-validation-pattern="^\+?[\d\s\-()+]+$" autocomplete="tel" />
 
           <Textarea name="message" label="Message" required />
 
