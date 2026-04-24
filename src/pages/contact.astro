@@ -116,6 +116,21 @@ import { Icon } from 'astro-icon/components'
           </p>
         </div>
 
+        <ul class="flex flex-wrap gap-2">
+          <li>
+            <Link href="https://www.linkedin.com/in/zivawernick/" isButton isExternal hideIcon animateOnHover animationType="boop">
+              <Icon aria-hidden="true" name="lucide:linkedin" size={32} />
+              <span class="sr-only">Go to my LinkedIn page, opens in a new tab</span>
+            </Link>
+          </li>
+          <li>
+            <Link href="https://api.whatsapp.com/send?phone=9720587705710" isButton isExternal hideIcon animateOnHover animationType="boop">
+              <Icon aria-hidden="true" name="simple-icons:whatsapp" size={32} />
+              <span class="sr-only">Send me a WhatsApp message, opens in a new tab</span>
+            </Link>
+          </li>
+        </ul>
+
         <div class="gap-2xs flex items-center">
           <Icon aria-hidden="true" name="lucide:clock" size={20} class="flex-shrink-0" />
           <p>
@@ -124,14 +139,7 @@ import { Icon } from 'astro-icon/components'
           </p>
         </div>
 
-        <ul class="flex flex-wrap gap-2">
-          <li>
-            <Link href="https://www.linkedin.com/in/zivawernick/" isButton isExternal hideIcon animateOnHover animationType="boop">
-              <Icon aria-hidden="true" name="lucide:linkedin" size={32} />
-              <span class="sr-only">Go to my LinkedIn page, opens in a new tab</span>
-            </Link>
-          </li>
-        </ul>
+        
       </div>
     </div>
   </section>
