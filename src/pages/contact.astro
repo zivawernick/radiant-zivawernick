@@ -52,6 +52,7 @@ import { Icon } from 'astro-icon/components'
            <div class="h-captcha" data-captcha="true"></div>
             <Button htmlType="submit" type="primary">Send Message</Button>
           </div>
+          <br>
         </Form>
       <script src="https://web3forms.com/client/script.js" async defer></script>
       <script>
@@ -100,7 +101,9 @@ import { Icon } from 'astro-icon/components'
           accessibility and usability work together seamlessly.
         </p>
 
-        <div class="gap-2xs flex items-center">
+        <div class="grid grid-cols-[1fr_auto_auto] grid-rows-2 gap-4 items-center">
+
+         <div class="col-start-1 row-start-1 gap-2xs flex items-center">
           <Icon aria-hidden="true" name="lucide:phone" size={20} class="flex-shrink-0" />
           <p>
             <span class="font-bold">Phone:</span>
@@ -108,14 +111,26 @@ import { Icon } from 'astro-icon/components'
           </p>
         </div>
 
-        <div class="gap-2xs flex items-center">
+        <div class="col-start-1 row-start-2 gap-2xs flex items-center">
           <Icon aria-hidden="true" name="lucide:mail" size={20} class="flex-shrink-0" />
           <p>
             <span class="font-bold">Email:</span>
             <Link href="mailto:wernickziva@gmail.com">wernickziva@gmail.com</Link>
           </p>
         </div>
-
+          <div class="col-start-2 row-start-1 row-span-2 gap-2xs flex items-center justify-center">
+            <Link href="https://www.linkedin.com/in/zivawernick/" class="gap-2xs flex items-center" isButton isExternal hideIcon animateOnHover animationType="boop">
+              <Icon aria-hidden="true" name="lucide:linkedin" size={32} />
+              <span class="sr-only">Go to my LinkedIn page, opens in a new tab</span>
+            </Link>
+          </div>
+          <div class="col-start-3 row-start-1 row-span-2 gap-2xs flex items-center justify-center">
+            <Link href="https://api.whatsapp.com/send?phone=9720587705710" class="gap-2xs flex items-center" isButton isExternal hideIcon animateOnHover animationType="boop">
+              <Icon aria-hidden="true" name="simple-icons:whatsapp" size={32} />
+              <span class="sr-only">Send me a WhatsApp message, opens in a new tab</span>
+            </Link>
+          </div>
+        </div> 
         <div class="gap-2xs flex items-center">
           <Icon aria-hidden="true" name="lucide:clock" size={20} class="flex-shrink-0" />
           <p>
@@ -124,14 +139,7 @@ import { Icon } from 'astro-icon/components'
           </p>
         </div>
 
-        <ul class="flex flex-wrap gap-2">
-          <li>
-            <Link href="https://www.linkedin.com/in/zivawernick/" isButton isExternal hideIcon animateOnHover animationType="boop">
-              <Icon aria-hidden="true" name="lucide:linkedin" size={32} />
-              <span class="sr-only">Go to my LinkedIn page, opens in a new tab</span>
-            </Link>
-          </li>
-        </ul>
+        
       </div>
     </div>
   </section>
