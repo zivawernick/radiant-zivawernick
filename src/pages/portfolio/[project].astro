@@ -6,6 +6,7 @@ import { Heading } from 'accessible-astro-components'
 import { getCollection, render } from 'astro:content'
 import type { CollectionEntry } from 'astro:content'
 import fallbackImage from '@assets/images/projects/placeholders/project-image-1.png'
+import profileImage from '@assets/img/profile.webp'
 
 export async function getStaticPaths() {
   const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order)
@@ -27,7 +28,7 @@ const { Content } = await render(project)
 
 const author = {
   name: project.data.author,
-  image: '/profile.jpg',
+  image: profileImage.src,
   bio: project.data.role,
 }
 
