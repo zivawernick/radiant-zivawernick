@@ -56,11 +56,11 @@ import { Icon } from 'astro-icon/components'
       <script src="https://web3forms.com/client/script.js" async defer></script>
       <script>
         function initCaptchaGuard() {
-          const form = document.querySelector('form.js-validate');
+          const form = document.querySelector<HTMLFormElement>('form.js-validate');
           if (!form || form.dataset.captchaGuard === 'true') return;
           form.dataset.captchaGuard = 'true';
 
-          const errorNotification = form.querySelector('.notification');
+          const errorNotification = form.querySelector<HTMLElement>('.notification');
           const errorNotificationContent = errorNotification?.querySelector('p');
 
           // accessible-astro-components Form validates required fields then calls
@@ -68,14 +68,18 @@ import { Icon } from 'astro-icon/components'
           // Override form.submit() on this instance so hCaptcha is checked first.
           const nativeSubmit = HTMLFormElement.prototype.submit.bind(form);
           form.submit = function () {
-            const hCaptcha = form.querySelector('textarea[name="h-captcha-response"]');
+            const hCaptcha = form.querySelector<HTMLTextAreaElement>('textarea[name="h-captcha-response"]');
 
             if (!hCaptcha || !hCaptcha.value) {
-              errorNotificationContent.textContent = 'Please complete the captcha before submitting.';
-              errorNotification.setAttribute('tabindex', '-1');
-              errorNotification.hidden = false;
-              errorNotification.focus();
-              errorNotification.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+              if (errorNotificationContent) {
+                errorNotificationContent.textContent = 'Please complete the captcha before submitting.';
+              }
+              if (errorNotification) {
+                errorNotification.setAttribute('tabindex', '-1');
+                errorNotification.hidden = false;
+                errorNotification.focus();
+                errorNotification.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+              }
               return;
             }
 
