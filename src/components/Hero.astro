@@ -29,9 +29,9 @@ const { src = '/moon-3.jpg' }: Props = Astro.props
         <h1 class="text-center text-6xl md:text-left lg:text-8xl">
           <slot><span class="text-gradient ">Ziva Wernick</span> </slot>
         </h1>
-        <h2 class="max-w-2xl text-pretty text-3xl font-large text-white/92 md:text-4xl outlined-text">
+        <p class="subtitle max-w-2xl text-pretty text-3xl font-large text-white/92 md:text-4xl outlined-text">
           Software Developer Building Tech for Social Impact
-        </h2>
+        </p>
         <div class="flex flex-col gap-3 min-[500px]:flex-row">
           <Link
             href="https://github.com/ziva-wernick/radiant-zivawernick"
@@ -62,6 +62,11 @@ const { src = '/moon-3.jpg' }: Props = Astro.props
 <style lang="scss">
   h1 {
     text-wrap: unset;
+  }
+  .subtitle {
+    /* Keep the base h2 typography now that the subtitle is a paragraph */
+    font-family: var(--font-heading);
+    font-weight: 600;
   }
   .outlined-text {
     /* More saturated colors (500 range) for better contrast against white text and moon */
