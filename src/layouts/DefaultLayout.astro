@@ -7,6 +7,7 @@ import Header from '@components/Header.astro'
 import Footer from '@components/Footer.astro'
 import GalleryLightbox from '@components/GalleryLightbox.astro'
 import { ClientRouter } from 'astro:transitions'
+import { getImage } from 'astro:assets'
 import type { ImageMetadata } from 'astro'
 
 interface Props {
@@ -52,8 +53,12 @@ const {
 } = Astro.props
 
 // For social sharing, we need the full absolute URL
-// If image is an ImageMetadata object, use its src, otherwise treat as string path
-const imagePath = image ? (typeof image === 'string' ? image : image.src) : '/social-preview-image.png'
+// Local (ImageMetadata) images are resized to the standard 1200x630 og:image size;
+// string paths (e.g. remote URLs or public/ assets) are used as-is since they can't be processed here.
+const imagePath =
+  image && typeof image !== 'string'
+    ? (await getImage({ src: image, width: 1200, height: 630, fit: 'cover' })).src
+    : (image ?? '/social-preview-image.png')
 const imageUrl = new URL(imagePath, Astro.site).href
 ---
 
