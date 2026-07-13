@@ -18,6 +18,11 @@ interface Props {
    */
   featuredImage?: string | ImageMetadata
   /**
+   * Alt text describing the featured image
+   * @default `Featured image for ${title}`
+   */
+  featuredImageAlt?: string
+  /**
    * The title of the page
    */
   title: string
@@ -63,6 +68,7 @@ const {
   bgType,
   showBreadcrumbs = true,
   featuredImage,
+  featuredImageAlt = `Featured image for ${Astro.props.title}`,
   author,
   customBreadcrumbLabels,
   joinLastBreadcrumb = false,
@@ -138,7 +144,7 @@ const sanitizedSubtitle: string = subtitle
           <div class="featured-image-container mb-8">
             <Image
               src={featuredImage}
-              alt=""
+              alt={featuredImageAlt}
               width={1200}
               height={300}
               class="h-[300] w-full rounded-lg object-cover"
