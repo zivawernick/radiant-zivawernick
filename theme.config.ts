@@ -9,7 +9,7 @@ export default defineThemeConfig({
   seo: {
     title: 'Ziva Wernick - Software Developer',
     description:
-      'Software Developer Building Tech for Social Impact with a Website built with Accessibility for Astro including several accessibility features and tools to help you build faster.',
+      'Full-stack software developer specializing in accessible, performant web apps. Portfolio, services, and project case studies by Ziva Wernick.',
     author: 'Ziva Wernick',
     image: previewImage, // Can also be a string e.g. '/social-preview-image.png',
   },

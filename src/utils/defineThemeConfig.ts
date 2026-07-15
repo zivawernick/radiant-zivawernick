@@ -57,7 +57,7 @@ const defaultConfig: Omit<ThemeConfig, 'name' | 'id'> = {
   seo: {
     title: 'Ziva Wernick',
     subtitle: 'Social Impact Software Developer',
-    description: 'A Portfolio website for So built with Accessible Astro Starter',
+    description: 'Personal portfolio website of Ziva Wernick, software developer.',
     author: 'Ziva Wernick',
     image: null,
   },
