@@ -67,7 +67,7 @@ A few things worth knowing when working in the repo:
 
 - GitHub — [@zivawernick](https://github.com/zivawernick)
 - LinkedIn — [ziva-wernick](https://www.linkedin.com/in/ziva-wernick/)
-- Email — [ziva.wernick@gmail.com](mailto:ziva.wernick@gmail.com)
+- Email — [wernick.ziva@gmail.com](mailto:wernick.ziva@gmail.com)
 
 ## Credits
 
