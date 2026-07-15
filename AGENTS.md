@@ -1,12 +1,12 @@
 # AI Agents & Assistants Context (AGENTS.md)
 
-This document provides essential context for AI agents (like GitHub Copilot, Cursor, ChatGPT, Claude) working on the Accessible Astro Starter project. It outlines the project structure, coding standards, and architectural decisions to ensure consistent, high-quality contributions.
+This document provides essential context for AI agents (like GitHub Copilot, Cursor, ChatGPT, Claude) working on the Ziva Wernick portfolio project. It outlines the project structure, coding standards, and architectural decisions to ensure consistent, high-quality contributions.
 
 ## Project Overview
 
-- **Name:** Accessible Astro Starter
-- **Framework:** Astro 5.16.0+
-- **Styling:** Tailwind CSS 4.1+ (using `@tailwindcss/vite`)
+- **Name:** Ziva Wernick — personal website & portfolio (built on the Accessible Astro Starter template)
+- **Framework:** Astro 6+
+- **Styling:** Tailwind CSS 4+ (using `@tailwindcss/vite`)
 - **Language:** TypeScript (Strict mode)
 - **Accessibility Goal:** WCAG 2.2 AA and European Accessibility Act (EAA) compliance.
 
@@ -36,7 +36,7 @@ This document provides essential context for AI agents (like GitHub Copilot, Cur
 - **Reduced Motion:** Always consider `motion-safe` and `motion-reduce` utilities.
 
 ### 3. Content Management
-- **Content Collections:** Defined in `src/content/config.ts`.
+- **Content Collections:** Defined in `src/content.config.ts`.
 - **Markdown/MDX:** Located in `src/content/`.
 - **Assets:** Images should be optimized using Astro's `<Image />` component or similar.
 
