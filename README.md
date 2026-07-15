@@ -1,4 +1,4 @@
-# Ziva Wernick — Software Developer
+# Ziva Wernick - Software Developer
 
 Personal website and portfolio of **Ziva Wernick**, a software developer building tech for social impact. The site showcases services, project case studies, and a technical stack, with accessibility treated as a first-class feature rather than an afterthought.
 
