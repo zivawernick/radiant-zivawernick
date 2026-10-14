@@ -5,133 +5,60 @@ interface Props {
 
 const { class: className } = Astro.props
 
-import { Heading, Tabs, TabsList, TabsTab, TabsPanel } from 'accessible-astro-components'
+import { Heading } from 'accessible-astro-components'
 
-interface ColorGroup {
+interface UsagePair {
   name: string
-  prefix: string
-  values: number[]
+  color: string
+  background: string
 }
 
-interface Theme {
-  name: string
-  id: string
-  description: string
-  textColor: string
-  bgVar: string
-}
-
-// Define color variants to test
-const colorGroups: ColorGroup[] = [
-  { name: 'Primary', prefix: 'primary', values: [100, 200, 300, 400, 500] },
-  { name: 'Secondary', prefix: 'secondary', values: [100, 200, 300, 400, 500] },
-  { name: 'Neutral', prefix: 'neutral', values: [100, 200, 300, 400, 500, 600, 700, 800, 900] },
-]
-
-// Define themes to test
-const themes: Theme[] = [
+// Token pairings actually used on this site (see src/assets/scss/base/_root.scss
+// and src/components/PageHeader.astro) - what visitors really see, in whichever
+// mode the site's own dark mode toggle is currently set to.
+const usagePairs: UsagePair[] = [
+  { name: 'Body text', color: 'var(--foreground-color)', background: 'var(--background-color)' },
+  { name: 'Link', color: 'var(--link-color)', background: 'var(--background-color)' },
+  { name: 'Link (hover)', color: 'var(--link-hover-color)', background: 'var(--background-color)' },
   {
-    name: 'Light Mode',
-    id: 'light-mode',
-    description: 'Dark text on colored backgrounds',
-    textColor: '#1A1A1A',
-    bgVar: 'var(--color-neutral-100)',
+    name: 'Primary banner (PageHeader)',
+    color: 'var(--foreground-color)',
+    background: 'light-dark(var(--color-primary-100), var(--color-primary-500))',
   },
   {
-    name: 'Dark Mode',
-    id: 'dark-mode',
-    description: 'Light text on colored backgrounds',
-    textColor: '#FFFFFF',
-    bgVar: 'var(--color-neutral-900)',
+    name: 'Secondary banner (PageHeader)',
+    color: 'var(--foreground-color)',
+    background: 'light-dark(var(--color-secondary-100), var(--color-secondary-500))',
+  },
+  {
+    name: 'Neutral banner (PageHeader)',
+    color: 'var(--foreground-color)',
+    background: 'light-dark(var(--color-neutral-300), var(--color-neutral-800))',
   },
 ]
 ---
 
 <div class={`color-contrast ${className || ''}`}>
-  <div class="tabs-wrapper">
-    <Tabs>
-      <TabsList>
-        {
-          themes.map((theme, index) => (
-            <TabsTab id={theme.id} controls={`${theme.id}-panel`} selected={index === 0}>
-              {theme.name}
-            </TabsTab>
-          ))
-        }
-      </TabsList>
-
-      {
-        themes.map((theme, index) => (
-          <TabsPanel id={`${theme.id}-panel`} labelledby={theme.id} selected={index === 0}>
-            <div class="theme-section">
-              <div class="theme-header">
-                <Heading level="h2">{theme.name}</Heading>
-                <p>{theme.description}</p>
-              </div>
-              <div class="color-categories">
-                {/* Three column layout for color categories */}
-                <div class="color-category">
-                  <Heading level="h3">Primary Colors</Heading>
-                  <div class="colors">
-                    {colorGroups[0].values.map((value) => (
-                      <div
-                        class="color-item"
-                        data-color-var={`--color-${colorGroups[0].prefix}-${value}`}
-                        data-theme-text-color={theme.textColor}
-                        style={`background-color: var(--color-${colorGroups[0].prefix}-${value})`}
-                      >
-                        <span class="color-name">
-                          {colorGroups[0].prefix} {value}
-                        </span>
-                        <span class="contrast-score" aria-live="polite" />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div class="color-category">
-                  <Heading level="h3">Secondary Colors</Heading>
-                  <div class="colors">
-                    {colorGroups[1].values.map((value) => (
-                      <div
-                        class="color-item"
-                        data-color-var={`--color-${colorGroups[1].prefix}-${value}`}
-                        data-theme-text-color={theme.textColor}
-                        style={`background-color: var(--color-${colorGroups[1].prefix}-${value})`}
-                      >
-                        <span class="color-name">
-                          {colorGroups[1].prefix} {value}
-                        </span>
-                        <span class="contrast-score" aria-live="polite" />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div class="color-category">
-                  <Heading level="h3">Neutral Colors</Heading>
-                  <div class="colors">
-                    {colorGroups[2].values.map((value) => (
-                      <div
-                        class="color-item"
-                        data-color-var={`--color-${colorGroups[2].prefix}-${value}`}
-                        data-theme-text-color={theme.textColor}
-                        style={`background-color: var(--color-${colorGroups[2].prefix}-${value})`}
-                      >
-                        <span class="color-name">
-                          {colorGroups[2].prefix} {value}
-                        </span>
-                        <span class="contrast-score" aria-live="polite" />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </TabsPanel>
-        ))
-      }
-    </Tabs>
+  <Heading level="h2" id="mode-label">Light Mode Check</Heading>
+  <p class="mode-hint">
+    Showing the color scheme currently active on this site. Use the dark mode toggle in the header to check the
+    other mode.
+  </p>
+  <div class="usage-items">
+    {
+      usagePairs.map((pair) => (
+        <div
+          class="usage-item"
+          role="img"
+          aria-label={`${pair.name}: contrast ratio will be calculated`}
+          data-pair-name={pair.name}
+          style={`color: ${pair.color}; background: ${pair.background}`}
+        >
+          <span class="usage-name">{pair.name}</span>
+          <span class="contrast-score" aria-live="polite" aria-atomic="true" role="status" />
+        </div>
+      ))
+    }
   </div>
 </div>
 
@@ -209,48 +136,57 @@ const themes: Theme[] = [
 
     // Get accurate computed color by rendering it
     function getComputedColorValue(element: Element, property: string): string {
-      // Get the computed style
       const style: CSSStyleDeclaration = window.getComputedStyle(element)
       return style.getPropertyValue(property)
     }
 
-    // Process all color items
-    function processColorItems(): void {
-      const colorItems: NodeListOf<Element> = document.querySelectorAll('.color-item')
+    // Each usage item sets its own color and background directly (via the
+    // site's real tokens), so its own computed styles are the answer.
+    function processUsageItems(): void {
+      const usageItems: NodeListOf<Element> = document.querySelectorAll('.usage-item')
 
-      colorItems.forEach((item) => {
-        // Get the background color
+      usageItems.forEach((item) => {
         const bgColor: string = getComputedColorValue(item, 'background-color')
+        const fgColor: string = getComputedColorValue(item, 'color')
         const bgRGB: number[] = extractRGB(bgColor)
+        const fgRGB: number[] = extractRGB(fgColor)
 
-        // Get the text color for this theme section
-        const themeTextColor: string = item.getAttribute('data-theme-text-color') || '#1A1A1A'
-        const textRGB: number[] = extractRGB(themeTextColor)
-
-        // Calculate contrast ratio
-        const contrastRatio: number = getContrastRatio(bgRGB, textRGB)
+        const contrastRatio: number = getContrastRatio(bgRGB, fgRGB)
         const result = getWCAGLevel(contrastRatio)
 
-        // Update the contrast score
         const scoreElement: Element | null = item.querySelector('.contrast-score')
         if (scoreElement) {
           scoreElement.textContent = `${result.ratio} ${result.name}`
           scoreElement.className = `contrast-score ${result.className}`
         }
 
-        // Set the text color for the color name
-        const nameElement: Element | null = item.querySelector('.color-name')
-        if (nameElement && nameElement instanceof HTMLElement) {
-          nameElement.style.color = themeTextColor
-        }
+        // role="img" hides the item's children from screen readers, so the
+        // label is what gets announced - keep it in step with the result.
+        const pairName: string = (item as HTMLElement).dataset.pairName ?? ''
+        item.setAttribute('aria-label', `${pairName}: contrast ratio ${result.ratio} to 1, ${result.name}`)
       })
     }
 
-    // Run contrast check when page loads
-    document.addEventListener('astro:page-load', processColorItems)
+    // Reflect which mode is actually active, driven by the same .darkmode
+    // class the site's dark mode toggle sets on <html>.
+    function updateModeLabel(): void {
+      const heading: HTMLElement | null = document.getElementById('mode-label')
+      if (!heading) return
+      const isDark: boolean = document.documentElement.classList.contains('darkmode')
+      heading.textContent = isDark ? 'Dark Mode Check' : 'Light Mode Check'
+    }
 
-    // Run contrast check when theme changes
-    document.addEventListener('astro:after-swap', processColorItems)
+    function refresh(): void {
+      updateModeLabel()
+      processUsageItems()
+    }
+
+    // Run contrast check when the page loads or navigates
+    document.addEventListener('astro:page-load', refresh)
+    document.addEventListener('astro:after-swap', refresh)
+
+    // Re-run when the site's dark mode toggle changes the active color scheme
+    document.addEventListener('darkmode:change', refresh)
   }
 
   // Initialize the contrast checker
@@ -258,57 +194,29 @@ const themes: Theme[] = [
 </script>
 
 <style lang="scss">
-  @use 'scss/base/breakpoint' as *;
-
   .color-contrast {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xl);
-  }
-
-  .theme-section {
-    inline-size: 100%;
-  }
-
-  .theme-header {
-    margin-bottom: var(--space-m);
-  }
-
-  .theme-header h2,
-  .theme-header h3 {
-    margin-bottom: var(--space-xs);
-  }
-
-  .theme-header p {
-    font-size: var(--font-size-2);
-  }
-
-  .color-categories {
-    display: grid;
-    grid-template-columns: 1fr;
     gap: var(--space-l);
-
-    @include breakpoint(l) {
-      grid-template-columns: repeat(3, 1fr);
-    }
   }
 
-  .color-category h3 {
-    margin-bottom: var(--space-xs);
-    font-size: var(--font-size-1);
+  .mode-hint {
+    font-size: var(--font-size--1);
+    color: var(--foreground-color);
   }
 
-  .colors {
+  .usage-items {
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);
   }
 
-  .color-item {
+  .usage-item {
     display: flex;
     position: relative;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid var(--border-color-subtle);
     border-radius: var(--radius-s);
     padding: var(--space-m);
     block-size: 3rem;
