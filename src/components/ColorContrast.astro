@@ -51,6 +51,7 @@ const usagePairs: UsagePair[] = [
           class="usage-item"
           role="img"
           aria-label={`${pair.name}: contrast ratio will be calculated`}
+          data-pair-name={pair.name}
           style={`color: ${pair.color}; background: ${pair.background}`}
         >
           <span class="usage-name">{pair.name}</span>
@@ -158,6 +159,11 @@ const usagePairs: UsagePair[] = [
           scoreElement.textContent = `${result.ratio} ${result.name}`
           scoreElement.className = `contrast-score ${result.className}`
         }
+
+        // role="img" hides the item's children from screen readers, so the
+        // label is what gets announced - keep it in step with the result.
+        const pairName: string = (item as HTMLElement).dataset.pairName ?? ''
+        item.setAttribute('aria-label', `${pairName}: contrast ratio ${result.ratio} to 1, ${result.name}`)
       })
     }
 
